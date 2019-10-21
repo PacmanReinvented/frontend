@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/coin.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/pacman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/wall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/EntityFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/EntityFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/EntityFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/EntityFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/view.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
