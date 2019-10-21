@@ -12,10 +12,10 @@ import java.io.FileNotFoundException;
 
 public class EntityFactory {
 
-    static Image WallIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\wall.png");
-    static Image PacManIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\pacman.png");
-    static Image SuperPalletIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\coin.gif");
-    static Image PalletIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\coin.png");
+    static Image WallIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\wall.png");
+    static Image PacManIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\pacman.png");
+    static Image SuperPalletIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\coin.gif");
+    static Image PalletIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\coin.png");
 
 
     public static ImageView drawWall(int x, int y, int w, int h)
