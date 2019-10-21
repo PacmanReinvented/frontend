@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DAL" />
         <module name="Interfaces" />
         <module name="GUI" />
+        <module name="DAL" />
         <module name="Logic" />
       </profile>
     </annotationProcessing>

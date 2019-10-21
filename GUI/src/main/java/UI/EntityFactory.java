@@ -1,39 +1,67 @@
 package UI;
 
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class EntityFactory {
 
-    public static Rectangle drawWall(int x, int y, int w, int h)
+    static Image WallIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\wall.png");
+    static Image PacManIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\pacman.png");
+    static Image SuperPalletIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\coin.gif");
+    static Image PalletIMG = new Image("file:C:\\Users\\B_sch\\IdeaProjects\\frontend\\GUI\\src\\main\\java\\UI\\assets\\coin.png");
+
+
+    public static ImageView drawWall(int x, int y, int w, int h)
     {
-        Rectangle wall = new Rectangle(w * x, h * y, w, h);
-        wall.setFill(Color.valueOf("#474a48"));
+        ImageView iv = new ImageView();
+        iv.setImage(WallIMG);
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+        iv.setX(x * w);
+        iv.setY(y * h);
 
-        return wall;
+        return iv;
     }
 
-    public static Rectangle drawPacman(int x, int y, int w, int h)
-    {
-        Rectangle pacman = new Rectangle(w * x + w * 0.1, h * y + h * 0.1, w * 0.8, h * 0.8);
-        pacman.setFill(Color.YELLOW);
+    public static ImageView drawPacman(int x, int y, int w, int h) {
 
-        return pacman;
+        ImageView iv = new ImageView();
+        iv.setImage(PacManIMG);
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+        iv.setX(x * w);
+        iv.setY(y * h);
+
+        return iv;
     }
 
-    public static Circle drawPallet(int x, int y, int w, int h) {
-        Circle Pallet = new Circle(w * x + w/2, h * y+ h/2, w *0.35);
-        Pallet.setFill(Color.YELLOW);
+    public static ImageView drawPallet(int x, int y, int w, int h) {
 
-        return Pallet;
+        ImageView iv = new ImageView();
+        iv.setImage(PalletIMG);
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+        iv.setX(x * w);
+        iv.setY(y * h);
+
+        return iv;
     }
 
-    public static Circle drawSuperPallet(int x, int y, int w, int h) {
-        Circle Pallet = new Circle(w * x+ w/2, h * y+ h/2, w *0.35);
-        Pallet.setFill(Color.RED);
+    public static ImageView drawSuperPallet(int x, int y, int w, int h) {
+        ImageView iv = new ImageView();
+        iv.setImage(SuperPalletIMG);
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+        iv.setX(x * w);
+        iv.setY(y * h);
 
-        return Pallet;
+        return iv;
     }
 }
