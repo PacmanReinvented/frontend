@@ -16,8 +16,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -44,11 +44,49 @@
     </dependency>
         <dependency>
             <groupId>PTS3</groupId>
-<<<<<<< HEAD
-            <artifactId>Logic</artifactId>
-=======
             <artifactId>Pacman Reinvented</artifactId>
->>>>>>> be02becd9e91e35bca1c391bdd56e81c746e488a
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Pacman Reinvented</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Pacman Reinvented</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Pacman Reinvented</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Pacman Reinvented</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Pacman Reinvented</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Pacman Reinvented</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>PTS3</groupId>
+            <artifactId>Logic</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

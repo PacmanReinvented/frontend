@@ -1,9 +1,6 @@
 package UI;
-<<<<<<< HEAD
 import Logic.MapReaderWriter;
-=======
 import Enums.TileType;
->>>>>>> be02becd9e91e35bca1c391bdd56e81c746e488a
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -30,11 +27,7 @@ public class Main extends Application
             }
         };
 
-        try {
-            MapReaderWriter.getMapFromFile("maps/textmap.pacmanmap");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
         timer.start();
 
@@ -46,6 +39,13 @@ public class Main extends Application
                 {TileType.PACMAN, TileType.PALLET,TileType.SUPERPALLET},
             {TileType.WALL, TileType.EMPTY,TileType.WALL}
     };
+    /*
+            try {
+            grid = MapReaderWriter.getMapFromFile("maps/textmap.pacmanmap");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+     */
 
 
 
