@@ -1,4 +1,5 @@
 package UI;
+import Enums.TileType;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -29,10 +30,10 @@ public class Main extends Application
         return root;
     }
 
-    TyleType[][] grid = {
-            {TyleType.WALL, TyleType.WALL,TyleType.WALL},
-                {TyleType.PACMAN, TyleType.PALLET,TyleType.SUPERPALET},
-            {TyleType.WALL, TyleType.EMPTY,TyleType.WALL}
+    TileType[][] grid = {
+            {TileType.WALL, TileType.WALL,TileType.WALL},
+                {TileType.PACMAN, TileType.PALLET,TileType.SUPERPALLET},
+            {TileType.WALL, TileType.EMPTY,TileType.WALL}
     };
 
     private void update() {
@@ -56,7 +57,7 @@ public class Main extends Application
                         case PALLET:
                             root.getChildren().add(EntityFactory.drawPallet(j, i, w, h));
                             break;
-                        case SUPERPALET:
+                        case SUPERPALLET:
                             root.getChildren().add(EntityFactory.drawSuperPallet(j, i, w, h));
                             break;
                         case EMPTY:
