@@ -1,4 +1,5 @@
 module Logic
 {
+    exports Logic;
 
 }

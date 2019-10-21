@@ -1,4 +1,5 @@
 package UI;
+import Logic.MapReaderWriter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -7,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main extends Application
 {
@@ -24,6 +26,12 @@ public class Main extends Application
             }
         };
 
+        try {
+            MapReaderWriter.getMapFromFile("maps/textmap.pacmanmap");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         timer.start();
 
         return root;
@@ -34,6 +42,8 @@ public class Main extends Application
                 {TyleType.PACMAN, TyleType.PALLET,TyleType.SUPERPALET},
             {TyleType.WALL, TyleType.EMPTY,TyleType.WALL}
     };
+
+
 
     private void update() {
         t += 0.016;
@@ -64,7 +74,7 @@ public class Main extends Application
                     }
                 }
             }
-            System.out.println(root.getChildren().size());
+            //System.out.println(root.getChildren().size());
     }
 
     @Override
