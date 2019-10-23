@@ -27,8 +27,6 @@ public class Main extends Application
             }
         };
 
-
-
         timer.start();
 
         return root;
@@ -44,9 +42,7 @@ public class Main extends Application
             grid = MapReaderWriter.getMapFromFile("maps/textmap.pacmanmap");
         } catch (IOException e) {
             e.printStackTrace();
-        }
-     */
-
+        }*/
 
 
     private void update() {
@@ -102,7 +98,6 @@ public class Main extends Application
         stage.setScene(scene);
         stage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

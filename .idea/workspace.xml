@@ -4,6 +4,7 @@
     <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,6 +98,7 @@
       <workItem from="1571662508283" duration="393000" />
       <workItem from="1571679826320" duration="13000" />
       <workItem from="1571726628050" duration="163000" />
+      <workItem from="1571835391664" duration="576000" />
     </task>
     <task id="LOCAL-00001" summary="fixed circular dependency">
       <created>1571662805103</created>
@@ -105,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571662805103</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed circular dependency">
+      <created>1571835583357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571835583357</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
