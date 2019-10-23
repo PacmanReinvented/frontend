@@ -47,7 +47,7 @@ public class CharacterManager implements IGuiLogic
 
     @Override
     public TileType[][] StartGame() throws IOException {
-        return MapReaderWriter.getMapFromFile("C:\\Users\\B_sch\\IdeaProjects\\frontend\\frontend\\Logic\\src\\main\\java\\Logic\\resources\\test.csv");
+        return MapReaderWriter.getMapFromFile("Logic\\src\\main\\java\\Logic\\resources\\test.csv");
     }
 
     @Override
