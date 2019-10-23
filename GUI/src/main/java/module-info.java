@@ -1,9 +1,10 @@
 module GUI
 {
     requires PacmanReinvented;
-    requires javafx.controls;
+    requires Interfaces;
     requires javafx.fxml;
     requires Logic;
+    requires javafx.graphics;
     opens UI;
     exports UI;
 }

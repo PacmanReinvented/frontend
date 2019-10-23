@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="" />
+    <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IGuiLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/ILogicGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +34,7 @@
         <option value="Enum" />
         <option value="module-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -37,7 +57,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -93,7 +113,7 @@
       <workItem from="1571662508283" duration="393000" />
       <workItem from="1571679826320" duration="13000" />
       <workItem from="1571726628050" duration="163000" />
-      <workItem from="1571835391664" duration="3995000" />
+      <workItem from="1571835391664" duration="576000" />
     </task>
     <task id="LOCAL-00001" summary="fixed circular dependency">
       <created>1571662805103</created>
@@ -109,21 +129,7 @@
       <option name="project" value="LOCAL" />
       <updated>1571835583357</updated>
     </task>
-    <task id="LOCAL-00003" summary="working version">
-      <created>1571836040857</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1571836040858</updated>
-    </task>
-    <task id="LOCAL-00004" summary="implemented scoring methods">
-      <created>1571839343476</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1571839343476</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,8 +151,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fixed circular dependency" />
-    <MESSAGE value="working version" />
-    <MESSAGE value="implemented scoring methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented scoring methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed circular dependency" />
   </component>
 </project>
