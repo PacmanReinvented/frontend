@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IGuiLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/ILogicGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +34,7 @@
         <option value="Enum" />
         <option value="module-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -42,7 +57,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />

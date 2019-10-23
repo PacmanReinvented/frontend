@@ -1,17 +1,13 @@
 package UI;
-import Logic.MapReaderWriter;
+import Interfaces.ILogicGui;
 import Enums.TileType;
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class Main extends Application
+public class Main extends Application implements ILogicGui
 {
     private Pane root = new Pane();
 
@@ -20,22 +16,14 @@ public class Main extends Application
     private Parent createContent() {
         root.setPrefSize(800, 600);
 
-        AnimationTimer timer = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                update();
-            }
-        };
-
-        timer.start();
-
+        updateCanvas(TestGrid);
         return root;
     }
 
-    TileType[][] grid = {
-            {TileType.WALL, TileType.WALL,TileType.WALL},
-                {TileType.PACMAN, TileType.PALLET,TileType.SUPERPALLET},
-            {TileType.WALL, TileType.EMPTY,TileType.WALL}
+    TileType[][] TestGrid = {
+            {TileType.WALL, TileType.WALL,TileType.WALL,TileType.WALL},
+                {TileType.PACMAN, TileType.PALLET,TileType.SUPERPALLET,TileType.SUPERPALLET},
+            {TileType.WALL, TileType.EMPTY,TileType.WALL,TileType.WALL}
     };
     /*
             try {
@@ -43,39 +31,6 @@ public class Main extends Application
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-
-
-    private void update() {
-        t += 0.016;
-
-        int w = 600 / grid[0].length;
-        int h = 600 / grid.length;
-
-        root.getChildren().removeIf(n -> {return true;});
-
-
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid[0].length; j++) {
-                    switch (grid[i][j]) {
-                        case WALL:
-                            root.getChildren().add(EntityFactory.drawWall(j, i, w, h));
-                            break;
-                        case PACMAN:
-                            root.getChildren().add(EntityFactory.drawPacman(j, i, w, h));
-                            break;
-                        case PALLET:
-                            root.getChildren().add(EntityFactory.drawPallet(j, i, w, h));
-                            break;
-                        case SUPERPALLET:
-                            root.getChildren().add(EntityFactory.drawSuperPallet(j, i, w, h));
-                            break;
-                        case EMPTY:
-                            break;
-                    }
-                }
-            }
-            //System.out.println(root.getChildren().size());
-    }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -101,5 +56,42 @@ public class Main extends Application
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void updateCanvas(TileType[][] grid) {
+        t += 0.016;
+
+        int w = 600 / grid[0].length;
+        int h = 600 / grid.length;
+
+        root.getChildren().removeIf(n -> {return true;});
+
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                switch (grid[i][j]) {
+                    case WALL:
+                        root.getChildren().add(EntityFactory.drawWall(j, i, w, h));
+                        break;
+                    case PACMAN:
+                        root.getChildren().add(EntityFactory.drawPacman(j, i, w, h));
+                        break;
+                    case PALLET:
+                        root.getChildren().add(EntityFactory.drawPallet(j, i, w, h));
+                        break;
+                    case SUPERPALLET:
+                        root.getChildren().add(EntityFactory.drawSuperPallet(j, i, w, h));
+                        break;
+                    case EMPTY:
+                        break;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void updateScoreboard(String[] scoreBoard) {
+
     }
 }
