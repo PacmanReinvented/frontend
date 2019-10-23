@@ -2,49 +2,64 @@ package Logic;
 
 import Enums.TileType;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class MapReaderWriter {
 
     public static TileType[][] getMapFromFile(String filename) throws IOException {
 
-        BufferedReader csvReader = new BufferedReader(new FileReader(filename));
+        File file= new File(filename);
+        int columnCount = 0;
 
-        int rows = (int) csvReader.lines().count(); // aantal rows
-        int columns = (int) csvReader.readLine().chars().count(); // aantal collomen
-        columns += 1;
-        columns = columns / 2;
+        List<List<String>> lines = new ArrayList<>();
+        Scanner inputStream;
 
-        TileType[][] grid = new TileType[rows][columns];
-        int rowCounter = 0;
+        try{
+            inputStream = new Scanner(file);
 
-        String row;
-        while ((row = csvReader.readLine()) != null) {
-            String[] data = row.split(",");
-            for (int i = 0; i < data.length; i++) {
-                grid[rowCounter][i] = charToTileType(data[i]);
+            while(inputStream.hasNext()){
+                String line= inputStream.next();
+                String[] values = line.split(",");
+                columnCount = values.length;
+                lines.add(Arrays.asList(values));
             }
-            rowCounter++;
-        }
-        csvReader.close();
 
+            inputStream.close();
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        TileType[][] grid = new TileType[lines.size()][];
+        for (int i = 0; i < lines.size(); i++) {
+            grid[i] = new TileType[columnCount];
+        }
+
+        int lineNo = 0;
+        for(List<String> line: lines) {
+            int columnNo = 0;
+            for (String value: line) {
+                grid[lineNo][columnNo] = charToTileType(value);
+                columnNo++;
+            }
+            lineNo++;
+        }
         return grid;
     }
 
     private static TileType charToTileType(String character){
         TileType tileType;
         switch (character){
-            case "X": tileType = TileType.WALL;
-            case "O": tileType = TileType.EMPTY;
-            case "P": tileType = TileType.PACMAN;
-            case "I": tileType = TileType.PALLET;
-            case "S": tileType = TileType.SUPERPALLET;
-            case "F": tileType = TileType.EMPTY;//TODO add FRUIT TileType
-            default: tileType = TileType.EMPTY;
+            case "x": tileType = TileType.WALL; break;
+            case "0": tileType = TileType.EMPTY;break;
+            case "p": tileType = TileType.PACMAN;break;
+            case "i": tileType = TileType.PALLET;break;
+            case "s": tileType = TileType.SUPERPALLET;break;
+            case "f": tileType = TileType.EMPTY;break;//TODO add FRUIT TileType
+            default: tileType = TileType.EMPTY;break;
         }
         return tileType;
     }

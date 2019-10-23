@@ -15,6 +15,10 @@ public class CharacterManager implements IGuiLogic
         this.character = character;
     }
 
+    public CharacterManager() {
+
+    }
+
 
     @Override
     public void MoveLeft() {
@@ -43,7 +47,7 @@ public class CharacterManager implements IGuiLogic
 
     @Override
     public TileType[][] StartGame() throws IOException {
-        return MapReaderWriter.getMapFromFile("file:Logic\\src\\main\\java\\resources\\test.csv");
+        return MapReaderWriter.getMapFromFile("C:\\Users\\B_sch\\IdeaProjects\\frontend\\frontend\\Logic\\src\\main\\java\\Logic\\resources\\test.csv");
     }
 
     @Override

@@ -1,11 +1,15 @@
 package UI;
+import Interfaces.IGuiLogic;
 import Interfaces.ILogicGui;
 import Enums.TileType;
+import Logic.CharacterManager;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Main extends Application implements ILogicGui
 {
@@ -13,10 +17,11 @@ public class Main extends Application implements ILogicGui
 
     private double t = 0;
 
-    private Parent createContent() {
+    private Parent createContent() throws IOException {
         root.setPrefSize(800, 600);
-
-        updateCanvas(TestGrid);
+        IGuiLogic Logic = new CharacterManager();
+        TileType[][] grid = Logic.StartGame();
+        updateCanvas(grid);
         return root;
     }
 
@@ -46,7 +51,8 @@ public class Main extends Application implements ILogicGui
 
         stage.setScene(scene);
         stage.show();
-    }
+
+ }
 
     public static void main(String[] args) {
         launch(args);
