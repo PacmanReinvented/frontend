@@ -2,12 +2,14 @@ package Interfaces;
 
 import Enums.TileType;
 
+import java.io.IOException;
+
 public interface IGuiLogic {
-    public void MoveLeft();
-    public void MoveRight();
-    public void MoveUp();
-    public void MoveDown();
-    public void EndGame();
-    public TileType[][] StartGame();
-    public void PauzeGame();
+    void MoveLeft();
+    void MoveRight();
+    void MoveUp();
+    void MoveDown();
+    void EndGame();
+    TileType[][] StartGame() throws IOException;
+    void PauzeGame();
 }

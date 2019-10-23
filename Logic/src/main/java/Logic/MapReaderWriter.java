@@ -12,7 +12,7 @@ public class MapReaderWriter {
 
     public static TileType[][] getMapFromFile(String filename) throws IOException {
 
-        BufferedReader csvReader = new BufferedReader(new FileReader("Logic\\src\\main\\resources\\test.csv"));
+        BufferedReader csvReader = new BufferedReader(new FileReader(filename));
 
         int rows = (int) csvReader.lines().count(); // aantal rows
         int columns = (int) csvReader.readLine().chars().count(); // aantal collomen

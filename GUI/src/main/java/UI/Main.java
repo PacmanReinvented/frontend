@@ -85,7 +85,8 @@ public class Main extends Application implements ILogicGui
     }
 
     @Override
-    public void updateScoreboard(String[] scoreBoard) {
+    public void updateScoreboard(String[] scoreBoard)
+    {
 
     }
 }

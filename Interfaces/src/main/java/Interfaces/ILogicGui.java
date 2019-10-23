@@ -3,6 +3,6 @@ package Interfaces;
 import Enums.TileType;
 
 public interface ILogicGui {
-    public void updateCanvas(TileType[][] grid);
-    public void updateScoreboard(String[] scoreBoard);
+    void updateCanvas(TileType[][] grid);
+    void updateScoreboard(String[] scoreBoard);
 }
