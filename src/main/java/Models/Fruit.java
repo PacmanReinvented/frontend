@@ -18,13 +18,10 @@ public class Fruit extends Item
 
     // properties
     public FruitType getFruitType(){return fruitType;}
-    public void setFruitType(FruitType fruitType){this.fruitType = fruitType;}
-    public void setValue(int value){this.value = value;}
 
     // methods
     public int getValue(FruitType fruitType)
     {
-        int value;
         switch(fruitType)
         {
             case Apple: value = 100;
