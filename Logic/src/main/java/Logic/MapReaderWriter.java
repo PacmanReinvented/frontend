@@ -6,52 +6,46 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 public class MapReaderWriter {
 
     public static TileType[][] getMapFromFile(String filename) throws IOException {
-        File f=new File(filename);     //Creation of File Descriptor for input file
-        FileReader fr=new FileReader(f);   //Creation of File Reader object
-        BufferedReader br=new BufferedReader(fr);  //Creation of BufferedReader object
-        int c = 0;
-        System.out.println("TODO: Make sure that the tile grid size is dynamically, rather than hardcoded.");
-        TileType[][] tileTypes = new TileType[16][16];
 
-        int x = 0;
-        int y = 0;
-        while((c = br.read()) != -1)         //Read char by Char
-        {
+        BufferedReader csvReader = new BufferedReader(new FileReader("Logic\\src\\main\\resources\\test.csv"));
 
-            char character = (char) c;
-            System.out.print(character);
-            if (String.valueOf(character).matches(".")){ //testing it like this, will make sure all types of NewLine are detected
-                tileTypes[x][y] = charToTileType(character);
-                x++;
+        int rows = (int) csvReader.lines().count(); // aantal rows
+        int columns = (int) csvReader.readLine().chars().count(); // aantal collomen
+        columns += 1;
+        columns = columns / 2;
+
+        TileType[][] grid = new TileType[rows][columns];
+        int rowCounter = 0;
+
+        String row;
+        while ((row = csvReader.readLine()) != null) {
+            String[] data = row.split(",");
+            for (int i = 0; i < data.length; i++) {
+                grid[rowCounter][i] = charToTileType(data[i]);
             }
-            else{
-                System.out.println("Line: "+y);
-                y++;
-                x=0;
-            }
-
+            rowCounter++;
         }
+        csvReader.close();
 
-        return tileTypes;
-
+        return grid;
     }
 
-    private static TileType charToTileType(char character){
+    private static TileType charToTileType(String character){
         TileType tileType;
         switch (character){
-            case 'X': tileType = TileType.WALL;
-            case 'O': tileType = TileType.EMPTY;
-            case 'P': tileType = TileType.PACMAN;
-            case 'I': tileType = TileType.PALLET;
-            case 'S': tileType = TileType.SUPERPALLET;
-            case 'F': tileType = TileType.EMPTY;//TODO add FRUIT TileType
+            case "X": tileType = TileType.WALL;
+            case "O": tileType = TileType.EMPTY;
+            case "P": tileType = TileType.PACMAN;
+            case "I": tileType = TileType.PALLET;
+            case "S": tileType = TileType.SUPERPALLET;
+            case "F": tileType = TileType.EMPTY;//TODO add FRUIT TileType
             default: tileType = TileType.EMPTY;
         }
-
         return tileType;
     }
 

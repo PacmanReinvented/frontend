@@ -25,12 +25,6 @@ public class Main extends Application implements ILogicGui
                 {TileType.PACMAN, TileType.PALLET,TileType.SUPERPALLET,TileType.SUPERPALLET},
             {TileType.WALL, TileType.EMPTY,TileType.WALL,TileType.WALL}
     };
-    /*
-            try {
-            grid = MapReaderWriter.getMapFromFile("maps/textmap.pacmanmap");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
 
     @Override
     public void start(Stage stage) throws Exception {
