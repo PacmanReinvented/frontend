@@ -1,4 +1,5 @@
 package UI;
+import Logic.MapReaderWriter;
 import Enums.TileType;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -8,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main extends Application
 {
@@ -25,6 +27,8 @@ public class Main extends Application
             }
         };
 
+
+
         timer.start();
 
         return root;
@@ -35,6 +39,15 @@ public class Main extends Application
                 {TileType.PACMAN, TileType.PALLET,TileType.SUPERPALLET},
             {TileType.WALL, TileType.EMPTY,TileType.WALL}
     };
+    /*
+            try {
+            grid = MapReaderWriter.getMapFromFile("maps/textmap.pacmanmap");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+     */
+
+
 
     private void update() {
         t += 0.016;
