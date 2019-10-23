@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Enums/TileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/TileType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,8 +94,18 @@
       <option name="presentableId" value="Default" />
       <updated>1570436185045</updated>
       <workItem from="1570436188027" duration="3291000" />
-      <workItem from="1571662508283" duration="238000" />
+      <workItem from="1571662508283" duration="393000" />
+      <workItem from="1571679826320" duration="13000" />
+      <workItem from="1571726628050" duration="163000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed circular dependency">
+      <created>1571662805103</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571662805103</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,5 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="fixed circular dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed circular dependency" />
   </component>
 </project>

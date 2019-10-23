@@ -65,7 +65,7 @@ public class Main extends Application
                     }
                 }
             }
-            System.out.println(root.getChildren().size());
+            //System.out.println(root.getChildren().size());
     }
 
     @Override
