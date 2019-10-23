@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Fruit.java" afterDir="false" />
-    </list>
+    <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +93,7 @@
       <workItem from="1571662508283" duration="393000" />
       <workItem from="1571679826320" duration="13000" />
       <workItem from="1571726628050" duration="163000" />
-      <workItem from="1571835391664" duration="3676000" />
+      <workItem from="1571835391664" duration="3995000" />
     </task>
     <task id="LOCAL-00001" summary="fixed circular dependency">
       <created>1571662805103</created>
@@ -127,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571836040858</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implemented scoring methods">
+      <created>1571839343476</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571839343476</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +146,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fixed circular dependency" />
     <MESSAGE value="working version" />
-    <option name="LAST_COMMIT_MESSAGE" value="working version" />
+    <MESSAGE value="implemented scoring methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented scoring methods" />
   </component>
 </project>
