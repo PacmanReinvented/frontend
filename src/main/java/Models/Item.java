@@ -23,6 +23,10 @@ public abstract class Item extends Observable implements IGameObject
 
     // methods
 
+    /**
+     * What happens when a Pacman picks up this object
+     * @param pacman The pacman who picked us up
+     */
     // methods
     public void PickedUp(Pacman pacman){
         System.out.println("Has the Game class been made the observer of this class?");
