@@ -13,4 +13,8 @@ public class Pacman extends Character
     // properties
 
     // methods
+
+    public void takeItem(Item item) {
+        item.PickedUp(this);
+    }
 }
