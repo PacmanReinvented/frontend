@@ -1,5 +1,6 @@
 package Logic;
 
+import Enums.MoveDirection;
 import Enums.TileType;
 import Interfaces.IGuiLogic;
 import Models.Character;
@@ -19,25 +20,10 @@ public class CharacterManager implements IGuiLogic
 
     }
 
-
     @Override
-    public void MoveLeft() {
-
-    }
-
-    @Override
-    public void MoveRight() {
-
-    }
-
-    @Override
-    public void MoveUp() {
-
-    }
-
-    @Override
-    public void MoveDown() {
-
+    public void Move(MoveDirection direction, int playerNr) {
+        System.out.println("Movement "+direction+" has not been handled yet.");
+        //TODO send this to the proper character
     }
 
     @Override
