@@ -1,8 +1,12 @@
 package Models;
 
 import Enums.MoveDirection;
+import Enums.TileType;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static Enums.TileType.*;
 
 public class Game {
 
@@ -11,18 +15,46 @@ public class Game {
     private List<Item> items;
     private List<Ghost> ghosts;
     private Pacman pacman;
+    private TileType[][] map;// We use this to store the map, so we can easily reset it to its default state.
 
-    public void newGame() {
-        throw new UnsupportedOperationException("method newGame() has not yet been implemented");
-
+    public void newGame(TileType[][] tiles) {
+        map = tiles;
+        setUpMap();
     }
 
+
     public void startGame() {
-        throw new UnsupportedOperationException("method startGame() has not yet been implemented");
+        setUpMap();
     }
 
     public void gameOver() {
         throw new UnsupportedOperationException("method gameOver() has not yet been implemented");
+    }
+
+    private void setUpMap(){
+        walls = new ArrayList<>();
+        ghosts = new ArrayList<>();
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[0].length; j++) {
+                switch (map[i][j]) {
+                    case WALL:
+                        walls.add(new Wall(j, i));
+                        break;
+                    case PACMAN:
+                        pacman = new Pacman(j, i, false, false);
+                        break;
+                    case PALLET:
+                        items.add(new Pallet(j, i, false));
+                        break;
+                    case SUPERPALLET:
+                        items.add(new Pallet(j, i, true));
+                        break;
+                    default:
+                        System.out.println("Tile type " + map[i][j] + " was not recognized.");
+                        break;
+                }
+            }
+        }
     }
 
     public void moveCharacter(Object o, MoveDirection direction) {
@@ -32,7 +64,7 @@ public class Game {
             character.moveTowards(direction);
             if (character instanceof Pacman) {
                 for (Item item : items) {
-                    if (item.collidesWith((character))){
+                    if (item.collidesWith((character))) {
                         ((Pacman) character).takeItem(item);
                     }
                 }

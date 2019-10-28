@@ -6,5 +6,6 @@ public enum TileType
     PACMAN,
     PALLET,
     SUPERPALLET,
-    EMPTY
+    EMPTY,
+    FRUIT
 }
