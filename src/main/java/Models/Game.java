@@ -142,7 +142,7 @@ public class Game implements Observer {
                 if (((Pallet) i).isSuper()) type = SUPERPALLET;
                 else type = PALLET;
             }
-            tiles[i.getPosX()][i.getPosY()] = PALLET;
+            tiles[i.getPosX()][i.getPosY()] = type;
             //TODO make this actually test for type of items
         }
         //fill empty tiles
