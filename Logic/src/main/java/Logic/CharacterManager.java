@@ -3,18 +3,14 @@ package Logic;
 import Enums.MoveDirection;
 import Enums.TileType;
 import Interfaces.IGuiLogic;
-import Models.Character;
+import Models.Game;
 
 import java.io.IOException;
 
-public class CharacterManager implements IGuiLogic
-{
-    private Character character;
+public class CharacterManager implements IGuiLogic {
 
-    public CharacterManager(Character character)
-    {
-        this.character = character;
-    }
+    Game game;
+
 
     public CharacterManager() {
 
@@ -22,7 +18,8 @@ public class CharacterManager implements IGuiLogic
 
     @Override
     public void Move(MoveDirection direction, int playerNr) {
-        System.out.println("Movement "+direction+" has not been handled yet.");
+        System.out.println("[CHARACTERMANAGER] Movement " + direction + " has not been handled yet. Player = " + playerNr);
+        game.moveCharacter(playerNr,direction);
         //TODO send this to the proper character
     }
 
@@ -33,7 +30,10 @@ public class CharacterManager implements IGuiLogic
 
     @Override
     public TileType[][] StartGame() throws IOException {
-        return MapReaderWriter.getMapFromFile("Logic\\src\\main\\java\\Logic\\resources\\test.csv");
+        TileType[][] tiles = MapReaderWriter.getMapFromFile("Logic\\src\\main\\java\\Logic\\resources\\test.csv");
+        game = new Game();
+        game.newGame(tiles);
+        return tiles;
     }
 
     @Override

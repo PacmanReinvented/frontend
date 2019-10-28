@@ -58,9 +58,9 @@ public class Game {
         }
     }
 
-    public void moveCharacter(Object o, MoveDirection direction) {
+    public void moveCharacter(int playerNr, MoveDirection direction) {
         //TODO determine the parameter we get to determine which character to move.
-        Character character = null;//TODO we will assign this variable a reference once we solve the above issue
+        Character character = characterFromPlayerNr(playerNr);
         if (characterCanMove(character, direction, 1)) {
             character.moveTowards(direction);
             if (character instanceof Pacman) {
@@ -83,6 +83,9 @@ public class Game {
             }
 
         }
+        else{
+            System.out.println("But we can't move to "+direction);
+        }
     }
 
     private boolean characterCanMove(Character character, MoveDirection direction, int amount) {
@@ -92,5 +95,11 @@ public class Game {
             if (!w.canMoveTo(x, y, amount, direction)) return false;
         }
         return true;
+    }
+
+    private Character characterFromPlayerNr(int playerNr){
+        System.out.println("characterFromPlayerNr() in Game needs to be unhackified. Keep track of playernumbers and their characters on registring.");
+        //TODO unhackify this
+        return pacman;
     }
 }
