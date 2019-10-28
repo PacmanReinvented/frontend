@@ -91,16 +91,16 @@ public abstract class Character extends Observable implements IGameObject {
         int y = posY;
         switch (direction) {
             case UP:
-                y -= amount;
-                break;
-            case DOWN:
-                y += amount;
-                break;
-            case LEFT:
                 x -= amount;
                 break;
-            case RIGHT:
+            case DOWN:
                 x += amount;
+                break;
+            case LEFT:
+                y -= amount;
+                break;
+            case RIGHT:
+                y += amount;
                 break;
         }
         setPosX(x);

@@ -96,12 +96,8 @@ public class Game implements Observer {
         } else {
             System.out.println("But we can't move to " + direction);
         }
-        Iterator i = items.iterator();
-        while (i.hasNext()){
-            Item item = (Item) i.next();
-            if(item.isEaten()) i.remove();
-            break;
-        }
+        cleanUp();
+
     }
 
     private boolean characterCanMove(Character character, MoveDirection direction, int amount) {
@@ -111,6 +107,14 @@ public class Game implements Observer {
             if (!w.canMoveTo(x, y, amount, direction)) return false;
         }
         return true;
+    }
+
+    private void cleanUp(){
+        Iterator i = items.iterator();
+        while (i.hasNext()){
+            Item item = (Item) i.next();
+            if(item.isEaten()) i.remove();
+        }
     }
 
     private Character characterFromPlayerNr(int playerNr) {
@@ -153,6 +157,7 @@ public class Game implements Observer {
     @Override
     public void update(Observable observable, Object o) {
         if (observable instanceof Item) {
+            System.out.println(o.toString()+" ate an item.");
             ((Item) observable).setEaten(true);
         }
     }

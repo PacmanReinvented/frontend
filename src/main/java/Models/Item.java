@@ -30,9 +30,8 @@ public abstract class Item extends Observable implements IGameObject
      */
     // methods
     public void PickedUp(Pacman pacman){
-        System.out.println("Has the Game class been made the observer of this class?");
         setChanged();
-        notifyObservers(pacman);//TODO determine what we will send to observers... And who will observe us?
+        notifyObservers(pacman);
     }
 
     @Override

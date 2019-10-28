@@ -37,16 +37,16 @@ public class Wall implements IGameObject
         int prospectiveY = startY;
         switch (direction) {
             case UP:
-                prospectiveY -= amount;
-                break;
-            case DOWN:
-                prospectiveY += amount;
-                break;
-            case LEFT:
                 prospectiveX -= amount;
                 break;
-            case RIGHT:
+            case DOWN:
                 prospectiveX += amount;
+                break;
+            case LEFT:
+                prospectiveY -= amount;
+                break;
+            case RIGHT:
+                prospectiveY += amount;
                 break;
         }
         return !collidesWith(prospectiveX, prospectiveY);
