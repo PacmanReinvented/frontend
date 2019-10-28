@@ -42,18 +42,18 @@ public class Game implements Observer {
             for (int j = 0; j < map[0].length; j++) {
                 switch (map[i][j]) {
                     case WALL:
-                        walls.add(new Wall(j, i));
+                        walls.add(new Wall(i, j));
                         break;
                     case PACMAN:
-                        pacman = new Pacman(j, i, false, false);
+                        pacman = new Pacman(i, j, false, false);
                         break;
                     case PALLET:
-                        Pallet pallet = new Pallet(j, i, false);
+                        Pallet pallet = new Pallet(i, j, false);
                         pallet.addObserver(this);
                         items.add(pallet);
                         break;
                     case SUPERPALLET:
-                        Pallet superpallet = new Pallet(j, i, true);
+                        Pallet superpallet = new Pallet(i, j, true);
                         superpallet.addObserver(this);
                         items.add(superpallet);
                         break;
