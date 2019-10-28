@@ -22,8 +22,8 @@ public class Game {
     public void newGame(TileType[][] tiles) {
         map = tiles;
         setUpMap();
-        width = map[0].length+1;
-        height = map[1].length+1;
+        width = map[0].length;
+        height = map[1].length;
     }
 
 
@@ -123,6 +123,12 @@ public class Game {
         for (Item i : items){
             tiles[i.getPosX()][i.getPosY()] = PALLET;
             //TODO make this actually test for type of items
+        }
+        //fill empty tiles
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                if(tiles[i][j]==null) tiles[i][j] = EMPTY;
+            }
         }
         return tiles;
     }
