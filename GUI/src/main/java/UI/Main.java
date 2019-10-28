@@ -25,6 +25,7 @@ public class Main extends Application implements ILogicGui {
     private Parent createContent() throws IOException {
         root.setPrefSize(800, 600);
         Logic = new CharacterManager();
+        Logic.registerPlayer(this,"Standalone");
         TileType[][] grid = Logic.StartGame();
         updateCanvas(grid);
         return root;
@@ -98,6 +99,9 @@ public class Main extends Application implements ILogicGui {
                         break;
                     case EMPTY:
                         break;
+                    default:
+                        System.out.println("GUI: drawing a TileType of type has not yet been implemented "+grid[i][j]);
+
                 }
             }
         }

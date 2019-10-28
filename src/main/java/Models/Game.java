@@ -16,10 +16,14 @@ public class Game {
     private List<Ghost> ghosts;
     private Pacman pacman;
     private TileType[][] map;// We use this to store the map, so we can easily reset it to its default state.
+    private int width;
+    private int height;
 
     public void newGame(TileType[][] tiles) {
         map = tiles;
         setUpMap();
+        width = map[0].length+1;
+        height = map[1].length+1;
     }
 
 
@@ -101,5 +105,25 @@ public class Game {
         System.out.println("characterFromPlayerNr() in Game needs to be unhackified. Keep track of playernumbers and their characters on registring.");
         //TODO unhackify this
         return pacman;
+    }
+
+    public TileType[][] getTilesFromState() {
+        TileType[][] tiles = new TileType[width][height];
+        //adding walls
+        for (Wall w : walls){
+            tiles[w.getPosX()][w.getPosY()] = WALL;
+        }
+        //adding pacman
+        tiles[pacman.getPosX()][pacman.getPosY()] = PACMAN;
+        //adding ghosts
+        for (Ghost g : ghosts){
+            tiles[g.getPosX()][g.getPosY()] = EMPTY;//TODO ghost tile;
+        }
+        //adding items
+        for (Item i : items){
+            tiles[i.getPosX()][i.getPosY()] = PALLET;
+            //TODO make this actually test for type of items
+        }
+        return tiles;
     }
 }
