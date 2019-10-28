@@ -3,12 +3,11 @@ package Models;
 import Enums.MoveDirection;
 import Enums.TileType;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static Enums.TileType.*;
 
-public class Game {
+public class Game implements Observer {
 
 
     private List<Wall> walls;
@@ -35,7 +34,7 @@ public class Game {
         throw new UnsupportedOperationException("method gameOver() has not yet been implemented");
     }
 
-    private void setUpMap(){
+    private void setUpMap() {
         walls = new ArrayList<>();
         ghosts = new ArrayList<>();
         items = new ArrayList<>();
@@ -49,10 +48,14 @@ public class Game {
                         pacman = new Pacman(j, i, false, false);
                         break;
                     case PALLET:
-                        items.add(new Pallet(j, i, false));
+                        Pallet pallet = new Pallet(j, i, false);
+                        pallet.addObserver(this);
+                        items.add(pallet);
                         break;
                     case SUPERPALLET:
-                        items.add(new Pallet(j, i, true));
+                        Pallet superpallet = new Pallet(j, i, true);
+                        superpallet.addObserver(this);
+                        items.add(superpallet);
                         break;
                     default:
                         System.out.println("Tile type " + map[i][j] + " was not recognized.");
@@ -68,10 +71,14 @@ public class Game {
         if (characterCanMove(character, direction, 1)) {
             character.moveTowards(direction);
             if (character instanceof Pacman) {
-                for (Item item : items) {
+                //Now we go through all items and check if we need to eat them
+                Iterator iterator = items.iterator();
+                while (iterator.hasNext()) {
+                    Item item = (Item) iterator.next();
                     if (item.collidesWith((character))) {
                         ((Pacman) character).takeItem(item);
                     }
+
                 }
             }
             //Are we pacman? then iterate over all ghosts
@@ -86,9 +93,14 @@ public class Game {
                 if (pacman.collidesWith(character)) pacman.doCollision(character);
             }
 
+        } else {
+            System.out.println("But we can't move to " + direction);
         }
-        else{
-            System.out.println("But we can't move to "+direction);
+        Iterator i = items.iterator();
+        while (i.hasNext()){
+            Item item = (Item) i.next();
+            if(item.isEaten()) i.remove();
+            break;
         }
     }
 
@@ -101,7 +113,7 @@ public class Game {
         return true;
     }
 
-    private Character characterFromPlayerNr(int playerNr){
+    private Character characterFromPlayerNr(int playerNr) {
         System.out.println("characterFromPlayerNr() in Game needs to be unhackified. Keep track of playernumbers and their characters on registring.");
         //TODO unhackify this
         return pacman;
@@ -110,26 +122,38 @@ public class Game {
     public TileType[][] getTilesFromState() {
         TileType[][] tiles = new TileType[width][height];
         //adding walls
-        for (Wall w : walls){
+        for (Wall w : walls) {
             tiles[w.getPosX()][w.getPosY()] = WALL;
         }
         //adding pacman
         tiles[pacman.getPosX()][pacman.getPosY()] = PACMAN;
         //adding ghosts
-        for (Ghost g : ghosts){
+        for (Ghost g : ghosts) {
             tiles[g.getPosX()][g.getPosY()] = EMPTY;//TODO ghost tile;
         }
         //adding items
-        for (Item i : items){
+        for (Item i : items) {
+            TileType type = EMPTY;
+            if(i instanceof Pallet){
+                if (((Pallet) i).isSuper()) type = SUPERPALLET;
+                else type = PALLET;
+            }
             tiles[i.getPosX()][i.getPosY()] = PALLET;
             //TODO make this actually test for type of items
         }
         //fill empty tiles
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                if(tiles[i][j]==null) tiles[i][j] = EMPTY;
+                if (tiles[i][j] == null) tiles[i][j] = EMPTY;
             }
         }
         return tiles;
+    }
+
+    @Override
+    public void update(Observable observable, Object o) {
+        if (observable instanceof Item) {
+            ((Item) observable).setEaten(true);
+        }
     }
 }

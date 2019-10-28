@@ -103,7 +103,6 @@ public abstract class Character extends Observable implements IGameObject {
                 x += amount;
                 break;
         }
-        System.out.println("Moved to X:" + x + ", Y:" + y);
         setPosX(x);
         setPosY(y);
     }

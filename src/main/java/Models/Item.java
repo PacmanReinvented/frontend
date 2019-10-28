@@ -7,6 +7,7 @@ public abstract class Item extends Observable implements IGameObject
     // fields
     private int posX;
     private int posY;
+    private boolean eaten = false;
 
     // constructor
     public Item(int posX, int posY)
@@ -31,7 +32,7 @@ public abstract class Item extends Observable implements IGameObject
     public void PickedUp(Pacman pacman){
         System.out.println("Has the Game class been made the observer of this class?");
         setChanged();
-        notifyObservers(this);//TODO determine what we will send to observers... And who will observe us?
+        notifyObservers(pacman);//TODO determine what we will send to observers... And who will observe us?
     }
 
     @Override
@@ -42,5 +43,13 @@ public abstract class Item extends Observable implements IGameObject
     @Override
     public boolean collidesWith(int x, int y) {
         return getPosX() == x && getPosY() == y;
+    }
+
+    public boolean isEaten() {
+        return eaten;
+    }
+
+    public void setEaten(boolean eaten) {
+        this.eaten = eaten;
     }
 }
