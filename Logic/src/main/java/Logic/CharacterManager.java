@@ -91,9 +91,11 @@ public class CharacterManager implements IGuiLogic, Observer {
                 System.out.println("[GameManager.java] New round, because: "+state);
                 game.startGame();
                 updateGUI();
+                //TODO send some feedback to players
                 break;
             case ENDED:
                 System.out.println("[CharacterManager.java] the game has ended.");
+                //TODO send some feedback to players
                 break;
         }
     }

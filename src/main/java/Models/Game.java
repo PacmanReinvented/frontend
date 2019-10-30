@@ -50,13 +50,13 @@ public class Game extends Observable implements Observer {
         while (iterator.hasNext()) {
             int currNr = (Integer) iterator.next();
             boolean wasPacman = previousPacmen.get(currNr);
-            System.out.println("Was "+currNr+" pacman?: "+wasPacman);
+            System.out.println("Was " + currNr + " pacman?: " + wasPacman);
             if (!wasPacman) {
                 pacmanFound = true;
                 previousPacmen.replace(currNr, true);
                 currentPacman = currNr;
             }
-            if(pacmanFound) break; //We don't want to do anymore checks if we already have a pacman.
+            if (pacmanFound) break; //We don't want to do anymore checks if we already have a pacman.
 
         }
         if (!pacmanFound) {//If nobody could be assigned the role of Pacman, that means everyone got their turn and the game has ended.w
@@ -64,13 +64,12 @@ public class Game extends Observable implements Observer {
             notifyObservers(GameState.ENDED);
         }
         int ghostIndex = 0;
-        for (Integer number : registeredPlayers){
-            System.out.println("[Game.java] assigning "+number+"...");
-            if(number == currentPacman){
-                playerCharacterMap.put(number,pacman);
-            }
-            else{//so the player is a ghost
-                playerCharacterMap.put(number,ghosts.get(ghostIndex));
+        for (Integer number : registeredPlayers) {
+            System.out.println("[Game.java] assigning " + number + "...");
+            if (number == currentPacman) {
+                playerCharacterMap.put(number, pacman);
+            } else {//so the player is a ghost
+                playerCharacterMap.put(number, ghosts.get(ghostIndex));
                 ghostIndex++;
             }
         }
@@ -126,7 +125,6 @@ public class Game extends Observable implements Observer {
     }
 
     public void moveCharacter(int playerNr, MoveDirection direction) {
-        //TODO determine the parameter we get to determine which character to move.
         Character character = characterFromPlayerNr(playerNr);
         if (characterCanMove(character, direction, 1)) {
             character.moveTowards(direction);
@@ -145,17 +143,16 @@ public class Game extends Observable implements Observer {
             if (character instanceof Pacman) {
                 for (Ghost g : ghosts) {
                     if (g.collidesWith(character)) {
-                        g.doCollision(character);
-                        System.out.println("[Game.java] a pacman/ ghost collision was detected.");
-                        setChanged();
-                        notifyObservers(GameState.PACMANDIED);
+                        pacmanGhostDoCollision(g,(Pacman) character);
                     }
                 }
 
             }
             //Are we a ghost? then just check collision with pacman. we do not need to collide with fellow ghosts
             else if (character instanceof Ghost) {
-                if (pacman.collidesWith(character)) pacman.doCollision(character);
+                if (pacman.collidesWith(character)) {
+                    pacmanGhostDoCollision((Ghost) character, pacman);
+                }
             }
 
         } else {
@@ -163,6 +160,13 @@ public class Game extends Observable implements Observer {
         }
         cleanUp();
 
+    }
+
+    private void pacmanGhostDoCollision(Ghost ghost, Pacman pacman) {
+        ghost.doCollision(pacman);
+        System.out.println("[Game.java] a pacman/ ghost collision was detected.");
+        setChanged();
+        notifyObservers(GameState.PACMANDIED);
     }
 
     public void updateGame() {
@@ -229,10 +233,10 @@ public class Game extends Observable implements Observer {
         return tiles;
     }
 
-    public boolean registerPlayer(int playerNr){
-        if(registeredPlayers.contains(playerNr)) return false;
+    public boolean registerPlayer(int playerNr) {
+        if (registeredPlayers.contains(playerNr)) return false;
         registeredPlayers.add(playerNr);
-        previousPacmen.put(playerNr,false);
+        previousPacmen.put(playerNr, false);
         return true;
     }
 
