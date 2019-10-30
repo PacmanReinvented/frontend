@@ -97,6 +97,9 @@ public class Main extends Application implements ILogicGui {
                     case SUPERPALLET:
                         root.getChildren().add(EntityFactory.drawSuperPallet(j, i, w, h));
                         break;
+                    case FRUIT:
+                        root.getChildren().add(EntityFactory.drawFruit(j,i,w,h));
+                        break;
                     case EMPTY:
                         break;
                     default:

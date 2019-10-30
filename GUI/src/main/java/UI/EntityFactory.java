@@ -16,6 +16,8 @@ public class EntityFactory {
     static Image PacManIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\pacman.png");
     static Image SuperPalletIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\coin.gif");
     static Image PalletIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\coin.png");
+    static Image GhostIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\ghost.png");
+    static Image FruitIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\fruit.png");
 
 
     public static ImageView drawWall(int x, int y, int w, int h)
@@ -57,6 +59,17 @@ public class EntityFactory {
     public static ImageView drawSuperPallet(int x, int y, int w, int h) {
         ImageView iv = new ImageView();
         iv.setImage(SuperPalletIMG);
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+        iv.setX(x * w);
+        iv.setY(y * h);
+
+        return iv;
+    }
+
+    public static ImageView drawFruit(int x, int y, int w, int h) {
+        ImageView iv = new ImageView();
+        iv.setImage(FruitIMG);
         iv.setFitWidth(w);
         iv.setFitHeight(h);
         iv.setX(x * w);

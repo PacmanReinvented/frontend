@@ -136,6 +136,7 @@ public abstract class Character extends Observable implements IGameObject {
      */
     public void addScore(int scoreToAdd) {
         score += scoreToAdd;
+        System.out.println("[Pacman.java] score is now: "+score);
     }
 
     private static void OnCollide(Pacman pacman, Ghost ghost) {

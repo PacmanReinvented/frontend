@@ -5,14 +5,12 @@ import Enums.FruitType;
 public class Fruit extends Item
 {
     // fields
-    private int value;
     private FruitType fruitType;
 
     // constructor
-    public Fruit(int posX, int posY, int value, FruitType fruitType)
+    public Fruit(int posX, int posY,  FruitType fruitType)
     {
         super(posX, posY);
-        this.value = value;
         this.fruitType = fruitType;
     }
 
@@ -20,8 +18,9 @@ public class Fruit extends Item
     public FruitType getFruitType(){return fruitType;}
 
     // methods
-    public int getValue(FruitType fruitType)
+    public static int getValue(FruitType fruitType)
     {
+        int value;
         switch(fruitType)
         {
             case Apple: value = 100;
@@ -34,5 +33,11 @@ public class Fruit extends Item
             break;
         }
         return value;
+    }
+    @Override
+    public void PickedUp(Pacman pacman){
+        System.out.println("[Fruit.java] the type of fruit eaten was a "+fruitType);
+        pacman.addScore(getValue(this.fruitType));
+        super.PickedUp(pacman);
     }
 }

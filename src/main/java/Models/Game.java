@@ -1,5 +1,6 @@
 package Models;
 
+import Enums.FruitType;
 import Enums.MoveDirection;
 import Enums.TileType;
 
@@ -56,6 +57,13 @@ public class Game implements Observer {
                         Pallet superpallet = new Pallet(i, j, true);
                         superpallet.addObserver(this);
                         items.add(superpallet);
+                        break;
+                    case FRUIT:
+                        int value = new Random().nextInt(FruitType.values().length);
+                        FruitType type = FruitType.values()[value];
+                        Fruit fruit = new Fruit(i,j,type);
+                        fruit.addObserver(this);
+                        items.add(fruit);
                         break;
                     default:
                         System.out.println("Tile type " + map[i][j] + " was not recognized.");
@@ -141,6 +149,9 @@ public class Game implements Observer {
             if(i instanceof Pallet){
                 if (((Pallet) i).isSuper()) type = SUPERPALLET;
                 else type = PALLET;
+            }
+            else if (i instanceof Fruit){
+                type = FRUIT;
             }
             tiles[i.getPosX()][i.getPosY()] = type;
             //TODO make this actually test for type of items
