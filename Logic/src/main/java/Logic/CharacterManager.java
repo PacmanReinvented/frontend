@@ -8,15 +8,16 @@ import Interfaces.ILogicGui;
 import Models.Game;
 
 import java.io.IOException;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Random;
+import java.util.*;
 
 //An implementation of IGUILogic for the standalone version. To be depricated when the server is built
 public class CharacterManager implements IGuiLogic, Observer {
 
     Game game;
     ILogicGui GUI;
+
+    private List<Integer> computerPlayers = new ArrayList<>();
+    private final int amountOfComputerPlayers = 1;
 
 
     public CharacterManager() {
@@ -27,16 +28,30 @@ public class CharacterManager implements IGuiLogic, Observer {
     @Override
     public void registerPlayer(ILogicGui GUI, String name) {
         this.GUI = GUI;
-        System.out.println("Registred " + name + " with GUI:" + GUI);
-        int playerNr = new Random().nextInt();
+
+        Random r = new Random();
+        int playerNr =r.nextInt();
+        System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: "+playerNr);
         game.registerPlayer(playerNr);
+        int computerPlayerNr;
+        for (int i = 0; i < amountOfComputerPlayers; i++) {
+            computerPlayerNr = r.nextInt();//the chance for a match is not big enough for me to bother to implement that check for this iteration
+            game.registerPlayer(computerPlayerNr);
+            computerPlayers.add(computerPlayerNr);
+        }
         GUI.setID(playerNr);
     }
 
     @Override
     public void Move(MoveDirection direction, int playerNr) {
         game.moveCharacter(playerNr, direction);
-        //TODO send this to the proper character
+        Random r = new Random();
+
+        //"AI"
+        for (Integer cpuNr : computerPlayers){
+            MoveDirection dir = MoveDirection.values()[r.nextInt(MoveDirection.values().length)];
+            game.moveCharacter(cpuNr,dir);
+        }
         updateGUI();
     }
 
@@ -64,18 +79,21 @@ public class CharacterManager implements IGuiLogic, Observer {
 
     @Override
     public void update(Observable observable, Object o) {
-        System.out.println("Received update from Game");
-        switch ((GameState) o) {
+        System.out.println("[GameManager.java] Received update from Game");
+        GameState state = (GameState) o;
+        switch (state) {
             case STARTED:
                 break;
             case PAUSED:
                 break;
             case ALLITEMSEATEN:
             case PACMANDIED:
+                System.out.println("[GameManager.java] New round, because: "+state);
                 game.startGame();
                 updateGUI();
                 break;
             case ENDED:
+                System.out.println("[CharacterManager.java] the game has ended.");
                 break;
         }
     }

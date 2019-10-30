@@ -23,7 +23,7 @@ public class Game extends Observable implements Observer {
     private List<Integer> registeredPlayers = new ArrayList<>();
 
     private Map<Integer, Character> playerCharacterMap;//This is where we save which id belongs to which character
-    private Map<Integer, Boolean> previousPacmen;// this is where we save which players have already been Pacman.
+    private Map<Integer, Boolean> previousPacmen = new HashMap<>();// this is where we save which players have already been Pacman.
     private int currentPacman;
 
     public void newGame(TileType[][] tiles) {
@@ -32,7 +32,6 @@ public class Game extends Observable implements Observer {
         width = map[0].length;
         height = map[1].length;
 
-        previousPacmen = new HashMap<>();
 
         selectNewPacman();
 
@@ -40,29 +39,33 @@ public class Game extends Observable implements Observer {
 
 
     public void startGame() {
-        selectNewPacman();
         setUpMap();
+        selectNewPacman();
     }
 
     private void selectNewPacman() {
         playerCharacterMap = new HashMap<>();
-        Iterator iterator = playerCharacterMap.entrySet().iterator();
+        Iterator iterator = registeredPlayers.iterator();
         boolean pacmanFound = false;
         while (iterator.hasNext()) {
-            Map.Entry<Integer, Character> pair = (Map.Entry<Integer, Character>) iterator.next();
-            int currNr = pair.getKey();
-            if (!previousPacmen.get(currNr)) {
+            int currNr = (Integer) iterator.next();
+            boolean wasPacman = previousPacmen.get(currNr);
+            System.out.println("Was "+currNr+" pacman?: "+wasPacman);
+            if (!wasPacman) {
                 pacmanFound = true;
                 previousPacmen.replace(currNr, true);
                 currentPacman = currNr;
             }
+            if(pacmanFound) break; //We don't want to do anymore checks if we already have a pacman.
+
         }
-        if (!pacmanFound) {
+        if (!pacmanFound) {//If nobody could be assigned the role of Pacman, that means everyone got their turn and the game has ended.w
             setChanged();
             notifyObservers(GameState.ENDED);
         }
         int ghostIndex = 0;
         for (Integer number : registeredPlayers){
+            System.out.println("[Game.java] assigning "+number+"...");
             if(number == currentPacman){
                 playerCharacterMap.put(number,pacman);
             }
@@ -71,6 +74,7 @@ public class Game extends Observable implements Observer {
                 ghostIndex++;
             }
         }
+        System.out.println(playerCharacterMap.toString());
     }
 
     public void gameOver() {
@@ -142,6 +146,7 @@ public class Game extends Observable implements Observer {
                 for (Ghost g : ghosts) {
                     if (g.collidesWith(character)) {
                         g.doCollision(character);
+                        System.out.println("[Game.java] a pacman/ ghost collision was detected.");
                         setChanged();
                         notifyObservers(GameState.PACMANDIED);
                     }
@@ -227,6 +232,7 @@ public class Game extends Observable implements Observer {
     public boolean registerPlayer(int playerNr){
         if(registeredPlayers.contains(playerNr)) return false;
         registeredPlayers.add(playerNr);
+        previousPacmen.put(playerNr,false);
         return true;
     }
 
