@@ -57,8 +57,9 @@ public class MapReaderWriter {
             case "0": tileType = TileType.EMPTY;break;
             case "p": tileType = TileType.PACMAN;break;
             case "i": tileType = TileType.PALLET;break;
+            case "g": tileType = TileType.GHOST;break;
             case "s": tileType = TileType.SUPERPALLET;break;
-            case "f": tileType = TileType.EMPTY;break;//TODO add FRUIT TileType
+            case "f": tileType = TileType.FRUIT;break;
             default: tileType = TileType.EMPTY;break;
         }
         return tileType;
