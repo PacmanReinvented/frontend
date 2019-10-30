@@ -1,6 +1,7 @@
 package Models;
 
 import Enums.FruitType;
+import Enums.GameState;
 import Enums.MoveDirection;
 import Enums.TileType;
 
@@ -8,7 +9,7 @@ import java.util.*;
 
 import static Enums.TileType.*;
 
-public class Game implements Observer {
+public class Game extends Observable implements Observer {
 
 
     private List<Wall> walls;
@@ -19,16 +20,57 @@ public class Game implements Observer {
     private int width;
     private int height;
 
+    private List<Integer> registeredPlayers = new ArrayList<>();
+
+    private Map<Integer, Character> playerCharacterMap;//This is where we save which id belongs to which character
+    private Map<Integer, Boolean> previousPacmen;// this is where we save which players have already been Pacman.
+    private int currentPacman;
+
     public void newGame(TileType[][] tiles) {
         map = tiles;
         setUpMap();
         width = map[0].length;
         height = map[1].length;
+
+        previousPacmen = new HashMap<>();
+
+        selectNewPacman();
+
     }
 
 
     public void startGame() {
+        selectNewPacman();
         setUpMap();
+    }
+
+    private void selectNewPacman() {
+        playerCharacterMap = new HashMap<>();
+        Iterator iterator = playerCharacterMap.entrySet().iterator();
+        boolean pacmanFound = false;
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, Character> pair = (Map.Entry<Integer, Character>) iterator.next();
+            int currNr = pair.getKey();
+            if (!previousPacmen.get(currNr)) {
+                pacmanFound = true;
+                previousPacmen.replace(currNr, true);
+                currentPacman = currNr;
+            }
+        }
+        if (!pacmanFound) {
+            setChanged();
+            notifyObservers(GameState.ENDED);
+        }
+        int ghostIndex = 0;
+        for (Integer number : registeredPlayers){
+            if(number == currentPacman){
+                playerCharacterMap.put(number,pacman);
+            }
+            else{//so the player is a ghost
+                playerCharacterMap.put(number,ghosts.get(ghostIndex));
+                ghostIndex++;
+            }
+        }
     }
 
     public void gameOver() {
@@ -48,6 +90,10 @@ public class Game implements Observer {
                     case PACMAN:
                         pacman = new Pacman(i, j, false, false);
                         break;
+                    case GHOST:
+                        Ghost ghost = new Ghost(i, j, false, false);
+                        ghosts.add(ghost);
+                        break;
                     case PALLET:
                         Pallet pallet = new Pallet(i, j, false);
                         pallet.addObserver(this);
@@ -61,12 +107,14 @@ public class Game implements Observer {
                     case FRUIT:
                         int value = new Random().nextInt(FruitType.values().length);
                         FruitType type = FruitType.values()[value];
-                        Fruit fruit = new Fruit(i,j,type);
+                        Fruit fruit = new Fruit(i, j, type);
                         fruit.addObserver(this);
                         items.add(fruit);
                         break;
+                    case EMPTY:
+                        break;
                     default:
-                        System.out.println("Tile type " + map[i][j] + " was not recognized.");
+                        System.out.println("[Game.java] Tile type " + map[i][j] + " was not recognized.");
                         break;
                 }
             }
@@ -92,7 +140,11 @@ public class Game implements Observer {
             //Are we pacman? then iterate over all ghosts
             if (character instanceof Pacman) {
                 for (Ghost g : ghosts) {
-                    if (g.collidesWith(character)) g.doCollision(character);
+                    if (g.collidesWith(character)) {
+                        g.doCollision(character);
+                        setChanged();
+                        notifyObservers(GameState.PACMANDIED);
+                    }
                 }
 
             }
@@ -108,6 +160,11 @@ public class Game implements Observer {
 
     }
 
+    public void updateGame() {
+        //TODO set collision detection in this shit.
+
+    }
+
     private boolean characterCanMove(Character character, MoveDirection direction, int amount) {
         int x = character.getPosX();
         int y = character.getPosY();
@@ -117,18 +174,21 @@ public class Game implements Observer {
         return true;
     }
 
-    private void cleanUp(){
+    private void cleanUp() {
         Iterator i = items.iterator();
-        while (i.hasNext()){
+        while (i.hasNext()) {
             Item item = (Item) i.next();
-            if(item.isEaten()) i.remove();
+            if (item.isEaten()) i.remove();
+        }
+        if (items.size() == 0) {
+            System.out.println("[Game.java] game has ended");
+            setChanged();
+            notifyObservers(GameState.ALLITEMSEATEN);
         }
     }
 
     private Character characterFromPlayerNr(int playerNr) {
-        System.out.println("characterFromPlayerNr() in Game needs to be unhackified. Keep track of playernumbers and their characters on registring.");
-        //TODO unhackify this
-        return pacman;
+        return playerCharacterMap.get(playerNr);
     }
 
     public TileType[][] getTilesFromState() {
@@ -141,16 +201,15 @@ public class Game implements Observer {
         tiles[pacman.getPosX()][pacman.getPosY()] = PACMAN;
         //adding ghosts
         for (Ghost g : ghosts) {
-            tiles[g.getPosX()][g.getPosY()] = EMPTY;//TODO ghost tile;
+            tiles[g.getPosX()][g.getPosY()] = GHOST;//TODO ghost tile;
         }
         //adding items
         for (Item i : items) {
             TileType type = EMPTY;
-            if(i instanceof Pallet){
+            if (i instanceof Pallet) {
                 if (((Pallet) i).isSuper()) type = SUPERPALLET;
                 else type = PALLET;
-            }
-            else if (i instanceof Fruit){
+            } else if (i instanceof Fruit) {
                 type = FRUIT;
             }
             tiles[i.getPosX()][i.getPosY()] = type;
@@ -165,10 +224,16 @@ public class Game implements Observer {
         return tiles;
     }
 
+    public boolean registerPlayer(int playerNr){
+        if(registeredPlayers.contains(playerNr)) return false;
+        registeredPlayers.add(playerNr);
+        return true;
+    }
+
     @Override
     public void update(Observable observable, Object o) {
         if (observable instanceof Item) {
-            System.out.println(o.toString()+" ate an item.");
+            System.out.println(o.toString() + " ate an item.");
             ((Item) observable).setEaten(true);
         }
     }

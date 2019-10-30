@@ -77,4 +77,15 @@ public class EntityFactory {
 
         return iv;
     }
+
+    public static ImageView drawGhost(int x, int y, int w, int h) {
+        ImageView iv = new ImageView();
+        iv.setImage(GhostIMG);
+        iv.setFitWidth(w);
+        iv.setFitHeight(h);
+        iv.setX(x * w);
+        iv.setY(y * h);
+
+        return iv;
+    }
 }

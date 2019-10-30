@@ -100,6 +100,8 @@ public class Main extends Application implements ILogicGui {
                     case FRUIT:
                         root.getChildren().add(EntityFactory.drawFruit(j,i,w,h));
                         break;
+                    case GHOST:
+                        root.getChildren().add(EntityFactory.drawGhost(j,i,w,h));
                     case EMPTY:
                         break;
                     default:
@@ -137,5 +139,10 @@ public class Main extends Application implements ILogicGui {
         }
         //TODO send to a thing
         //throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void setID(int playerNr) {
+        this.playerNr = playerNr;
     }
 }
