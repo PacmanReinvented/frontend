@@ -17,6 +17,7 @@ public class CharacterManager implements IGuiLogic, Observer {
     ILogicGui GUI;
 
     private List<Integer> computerPlayers = new ArrayList<>();
+    private Map<Integer, String> playerNames = new HashMap<>();
     private final int amountOfComputerPlayers = 1;
 
 
@@ -30,14 +31,16 @@ public class CharacterManager implements IGuiLogic, Observer {
         this.GUI = GUI;
 
         Random r = new Random();
-        int playerNr =r.nextInt();
-        System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: "+playerNr);
+        int playerNr = r.nextInt();
+        System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: " + playerNr);
+        playerNames.put(playerNr, name);
         game.registerPlayer(playerNr);
         int computerPlayerNr;
         for (int i = 0; i < amountOfComputerPlayers; i++) {
             computerPlayerNr = r.nextInt();//the chance for a match is not big enough for me to bother to implement that check for this iteration
             game.registerPlayer(computerPlayerNr);
             computerPlayers.add(computerPlayerNr);
+            playerNames.put(computerPlayerNr, "Computer Player #" + i + 1);
         }
         GUI.setID(playerNr);
     }
@@ -48,9 +51,9 @@ public class CharacterManager implements IGuiLogic, Observer {
         Random r = new Random();
 
         //"AI"
-        for (Integer cpuNr : computerPlayers){
+        for (Integer cpuNr : computerPlayers) {
             MoveDirection dir = MoveDirection.values()[r.nextInt(MoveDirection.values().length)];
-            game.moveCharacter(cpuNr,dir);
+            game.moveCharacter(cpuNr, dir);
         }
         updateGUI();
     }
@@ -73,6 +76,22 @@ public class CharacterManager implements IGuiLogic, Observer {
 
     }
 
+    @Override
+    public String getScoreList() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Scores: \n");
+        Map<Integer, Integer> scorelist = game.getScoreList();
+        if (scorelist == null) return "Game has not yet started.";
+        Iterator it = scorelist.keySet().iterator();
+        while (it.hasNext()) {
+            int key = (Integer) it.next();
+            int score = scorelist.get(key);
+            String name = playerNames.get(key);
+            sb.append(name + " - " + score + "\n");
+        }
+        return sb.toString();
+    }
+
     private void updateGUI() {
         GUI.updateCanvas(game.getTilesFromState());
     }
@@ -88,7 +107,7 @@ public class CharacterManager implements IGuiLogic, Observer {
                 break;
             case ALLITEMSEATEN:
             case PACMANDIED:
-                System.out.println("[GameManager.java] New round, because: "+state);
+                System.out.println("[GameManager.java] New round, because: " + state);
                 game.startGame();
                 updateGUI();
                 //TODO send some feedback to players

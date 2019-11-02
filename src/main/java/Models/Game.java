@@ -22,8 +22,10 @@ public class Game extends Observable implements Observer {
 
     private List<Integer> registeredPlayers = new ArrayList<>();
 
+    //maps
     private Map<Integer, Character> playerCharacterMap;//This is where we save which id belongs to which character
     private Map<Integer, Boolean> previousPacmen = new HashMap<>();// this is where we save which players have already been Pacman.
+    private Map<Integer, Integer> scoreList;
     private int currentPacman;
 
     public void newGame(TileType[][] tiles) {
@@ -34,19 +36,55 @@ public class Game extends Observable implements Observer {
 
 
         selectNewPacman();
+        scoreList = new HashMap<>();
 
     }
 
 
     public void startGame() {
         setUpMap();
+        saveScores();
         selectNewPacman();
+        assignScores();
     }
+
+    /**
+     * Writes away the Character object's scores
+     */
+    private void saveScores(){
+        scoreList.clear();
+        Iterator it = playerCharacterMap.keySet().iterator();
+        while(it.hasNext()){
+            int key = (Integer) it.next();
+            Character character = playerCharacterMap.get(key);
+            scoreList.put(key,character.getScore());
+        }
+    }
+
+    /**
+     * Assigns the saved scores to their respective Character objects
+     */
+    private void assignScores(){
+        Iterator it = scoreList.keySet().iterator();
+        while(it.hasNext()){
+            int key = (Integer) it.next();
+            int score = scoreList.get(key);
+            playerCharacterMap.get(key).setScore(score);
+        }
+    }
+
+    /**
+     * @return The scorelist as a map. The key is the playerNr, while the value is the actual score.
+     */
+    public Map<Integer,Integer> getScoreList(){
+        return scoreList;
+    }
+
 
     private void selectNewPacman() {
         playerCharacterMap = new HashMap<>();
         Iterator iterator = registeredPlayers.iterator();
-        boolean pacmanFound = false;
+        boolean pacmanFound = false;//whether or not we assigned the role of pacman to someone
         while (iterator.hasNext()) {
             int currNr = (Integer) iterator.next();
             boolean wasPacman = previousPacmen.get(currNr);

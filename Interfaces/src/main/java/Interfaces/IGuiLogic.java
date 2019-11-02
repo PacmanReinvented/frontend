@@ -11,4 +11,5 @@ public interface IGuiLogic {
     void EndGame();
     TileType[][] StartGame() throws IOException;
     void PauzeGame();
+    String getScoreList();
 }
