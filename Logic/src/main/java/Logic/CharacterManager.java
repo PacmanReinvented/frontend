@@ -65,7 +65,7 @@ public class CharacterManager implements IGuiLogic, Observer {
 
     @Override
     public TileType[][] StartGame() throws IOException {
-        TileType[][] tiles = MapReaderWriter.getMapFromFile("Logic\\src\\main\\java\\Logic\\resources\\oneItem.csv");
+        TileType[][] tiles = MapReaderWriter.getMapFromFile("Logic\\src\\main\\java\\Logic\\resources\\test.csv");
 
         game.newGame(tiles);
         return tiles;
