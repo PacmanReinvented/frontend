@@ -51,22 +51,22 @@ public class Game extends Observable implements Observer {
     /**
      * Writes away the Character object's scores
      */
-    private void saveScores(){
+    private void saveScores() {
         scoreList.clear();
         Iterator it = playerCharacterMap.keySet().iterator();
-        while(it.hasNext()){
+        while (it.hasNext()) {
             int key = (Integer) it.next();
             Character character = playerCharacterMap.get(key);
-            scoreList.put(key,character.getScore());
+            scoreList.put(key, character.getScore());
         }
     }
 
     /**
      * Assigns the saved scores to their respective Character objects
      */
-    private void assignScores(){
+    private void assignScores() {
         Iterator it = scoreList.keySet().iterator();
-        while(it.hasNext()){
+        while (it.hasNext()) {
             int key = (Integer) it.next();
             int score = scoreList.get(key);
             playerCharacterMap.get(key).setScore(score);
@@ -76,7 +76,7 @@ public class Game extends Observable implements Observer {
     /**
      * @return The scorelist as a map. The key is the playerNr, while the value is the actual score.
      */
-    public Map<Integer,Integer> getScoreList(){
+    public Map<Integer, Integer> getScoreList() {
         return scoreList;
     }
 
@@ -181,7 +181,7 @@ public class Game extends Observable implements Observer {
             if (character instanceof Pacman) {
                 for (Ghost g : ghosts) {
                     if (g.collidesWith(character)) {
-                        pacmanGhostDoCollision(g,(Pacman) character);
+                        pacmanGhostDoCollision(g, (Pacman) character);
                     }
                 }
 
@@ -194,7 +194,7 @@ public class Game extends Observable implements Observer {
             }
 
         } else {
-            System.out.println("But we can't move to " + direction);
+            System.out.println("[Game.java] But we can't move " + character.toString() + "to " + direction);
         }
         cleanUp();
 
