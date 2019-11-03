@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 public class EntityFactory {
 
     static Image WallIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\wall.png");
-    static Image PacManIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\pacman.png");
+    static Image PacManIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\pacman.gif");
     static Image SuperPalletIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\coin.gif");
     static Image PalletIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\coin.png");
     static Image GhostIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\ghost.png");
