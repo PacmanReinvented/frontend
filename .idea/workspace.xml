@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/coin-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTesting/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/CharacterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/ItemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/coin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/ghost.png" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/ghost.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/wall.png" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/assets/wall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/EntityFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/EntityFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/target/classes/Interfaces/IGuiLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/target/classes/Interfaces/IGuiLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/target/classes/Interfaces/ILogicGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/target/classes/Interfaces/ILogicGui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/MapReaderWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/MapReaderWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enums/TileType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Enums/TileType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Fruit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Fruit$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Fruit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Fruit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Ghost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Pacman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Pallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Pallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Wall.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,9 +26,10 @@
       <list>
         <option value="FxmlFile" />
         <option value="Enum" />
-        <option value="module-info" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -66,13 +56,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Logic/src/main/java/Logic" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Software/Zeeslag Singleplayer" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Logic" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="UI" />
     </key>
@@ -93,23 +92,63 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.Main" />
-      <module name="GUI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="JUnit.ItemTest.cannotMoveThroughWall">
+    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.ghostBecomeVulnerable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
+      <option name="METHOD_NAME" value="ghostBecomeVulnerable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.movePacman" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
+      <option name="METHOD_NAME" value="movePacman" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.pacmanGetsEaten" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
+      <option name="METHOD_NAME" value="pacmanGetsEaten" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.cannotMoveThroughWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ItemTest" />
+      <option name="METHOD_NAME" value="cannotMoveThroughWall" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ItemTest.cannotMoveThroughWall" />
+        <item itemvalue="JUnit.CharacterTest.ghostBecomeVulnerable" />
+        <item itemvalue="JUnit.CharacterTest.pacmanGetsEaten" />
+        <item itemvalue="JUnit.CharacterTest" />
+        <item itemvalue="JUnit.CharacterTest.movePacman" />
       </list>
     </recent_temporary>
   </component>

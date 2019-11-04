@@ -25,6 +25,7 @@
         <module>Logic</module>
         <module>DAL</module>
         <module>Interfaces</module>
+        <module>UnitTesting</module>
     </modules>
 
 

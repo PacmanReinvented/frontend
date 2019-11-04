@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Interfaces" />
         <module name="DAL" />
+        <module name="UnitTesting" />
         <module name="GUI" />
         <module name="Logic" />
       </profile>
