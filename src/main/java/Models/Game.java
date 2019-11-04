@@ -131,10 +131,7 @@ public class Game extends Observable implements Observer {
                     case PACMAN:
                         pacman = new Pacman(i, j, false, false);
                         break;
-                    case GHOST:
-                        Ghost ghost = new Ghost(i, j, false, false);
-                        ghosts.add(ghost);
-                        break;
+
                     case PALLET:
                         Pallet pallet = new Pallet(i, j, false);
                         pallet.addObserver(this);
@@ -154,6 +151,10 @@ public class Game extends Observable implements Observer {
                         break;
                     case EMPTY:
                         break;
+                    case GHOST:
+                        Ghost ghost = new Ghost(i, j, false, false);
+                        ghosts.add(ghost);
+                        break;
                     default:
                         System.out.println("[Game.java] Tile type " + map[i][j] + " was not recognized.");
                         break;
@@ -161,6 +162,8 @@ public class Game extends Observable implements Observer {
             }
         }
     }
+
+    public TileType prevLocType = EMPTY;
 
     public void moveCharacter(int playerNr, MoveDirection direction) {
         Character character = characterFromPlayerNr(playerNr);
@@ -244,12 +247,7 @@ public class Game extends Observable implements Observer {
         for (Wall w : walls) {
             tiles[w.getPosX()][w.getPosY()] = WALL;
         }
-        //adding pacman
-        tiles[pacman.getPosX()][pacman.getPosY()] = PACMAN;
-        //adding ghosts
-        for (Ghost g : ghosts) {
-            tiles[g.getPosX()][g.getPosY()] = GHOST;//TODO ghost tile;
-        }
+
         //adding items
         for (Item i : items) {
             TileType type = EMPTY;
@@ -267,6 +265,12 @@ public class Game extends Observable implements Observer {
             for (int j = 0; j < height; j++) {
                 if (tiles[i][j] == null) tiles[i][j] = EMPTY;
             }
+        }
+        //adding pacman
+        tiles[pacman.getPosX()][pacman.getPosY()] = PACMAN;
+        //adding ghosts
+        for (Ghost g : ghosts) {
+            tiles[g.getPosX()][g.getPosY()] = GHOST;//TODO ghost tile;
         }
         return tiles;
     }

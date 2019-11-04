@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.io.IOException;
 public class Main extends Application implements ILogicGui
 {
     private Pane GameCanvas = new Pane();
+    private Pane ScoreCanvas = new Pane();
     private Pane Container = new Pane();
 
     private double t = 0;
@@ -30,18 +32,25 @@ public class Main extends Application implements ILogicGui
         GameCanvas.setPrefSize(600, 600);
         Logic = new CharacterManager();
         Logic.registerPlayer(this,"Standalone");
+        GameCanvas.setStyle("-fx-background-color: #5fc964; -fx-margin: 0;");
         TileType[][] grid = Logic.StartGame();
         updateCanvas(grid);
         return GameCanvas;
     }
 
+    private Pane createScoreCanvas() throws IOException {
+        ScoreCanvas.setPrefSize(200, 600);
+        ScoreCanvas.setLayoutX(600);
+        ScoreCanvas.setStyle("-fx-background-color: #57eb5e;");
+        return ScoreCanvas;
+    }
 
     private Parent createParent() throws IOException {
         Container.setPrefSize(800, 600);
         Container.getChildren().add(createGameCanvas());
+        Container.getChildren().add(createScoreCanvas());
         return Container;
     }
-
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -119,7 +128,16 @@ public class Main extends Application implements ILogicGui
     @Override
     public void updateScoreboard(String[] scoreBoard) {
         //TODO poll Game Interface for some scores
-        throw new UnsupportedOperationException();
+        ScoreCanvas.getChildren().clear();
+        for (int i = 0; i < scoreBoard.length; i++)
+        {
+            Text txt = new Text();
+            txt.setStyle("-fx-fill: white; -fx-font: 14pxf Tahoma;");
+            txt.setX(25);
+            txt.setY(50 + (i * 40));
+            txt.setText(scoreBoard[i]);
+            ScoreCanvas.getChildren().add(txt);
+        }
     }
 
     @Override
@@ -141,6 +159,9 @@ public class Main extends Application implements ILogicGui
             default:
                 System.out.println("Input " + inputType + " has not yet been handled.");
         }
+        String[] myStringArray = {Logic.getScoreList()};
+        updateScoreboard(myStringArray);
+        System.out.println(myStringArray[0]);
         //TODO send to a thing
         //throw new UnsupportedOperationException();
     }
