@@ -20,19 +20,7 @@ public class Fruit extends Item
     // methods
     public static int getValue(FruitType fruitType)
     {
-        int value;
-        switch(fruitType)
-        {
-            case Apple: value = 100;
-            break;
-            case Banana: value = 250;
-            break;
-            case Cherry: value = 500;
-            break;
-            default: value = 0;
-            break;
-        }
-        return value;
+        return fruitType.getScoreValue();
     }
     @Override
     public void PickedUp(Pacman pacman){
