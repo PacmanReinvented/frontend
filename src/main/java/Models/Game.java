@@ -200,6 +200,7 @@ public class Game extends Observable implements Observer {
                     pacmanGhostDoCollision(g, character);
                 }
             }
+            saveScores();
 
 
     }
