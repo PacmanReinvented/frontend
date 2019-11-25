@@ -26,6 +26,8 @@
         <module>DAL</module>
         <module>Interfaces</module>
         <module>UnitTesting</module>
+        <module>PacmanSocketServer</module>
+        <module>PacmanSocketClient</module>
     </modules>
 
 

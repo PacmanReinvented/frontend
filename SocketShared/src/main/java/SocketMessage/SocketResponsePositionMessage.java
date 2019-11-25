@@ -9,6 +9,7 @@ public class SocketResponsePositionMessage extends SocketMessage {
 
     public SocketResponsePositionMessage(TileType[][] positions) {
         this.positions = positions;
+        this.setOperationType(SocketOperationType.POSITIONS);
     }
 
     public TileType[][] getPositions() {

@@ -1,17 +1,19 @@
 package SocketMessage;
 
+import Enums.MoveDirection;
 import Interfaces.enums.InputTypes;
 
 public class SocketClientMessage extends SocketMessage {
 
-    private InputTypes inputType;
+    private MoveDirection inputType;
 
-    public SocketClientMessage(InputTypes inputType) {
+    public SocketClientMessage(MoveDirection inputType) {
         this.inputType = inputType;
+        this.setOperationType(SocketOperationType.INPUT);
     }
 
 
-    public InputTypes getInputType() {
+    public MoveDirection getInputType() {
         return inputType;
     }
 

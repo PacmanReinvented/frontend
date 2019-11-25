@@ -1,0 +1,3 @@
+module SocketServer {
+    requires SocketShared;
+}
