@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UnitTesting/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/CharacterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/ItemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/module-info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocketShared/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketShared/SocketShared.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +58,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Logic" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="UI" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="UI" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\B_sch\IdeaProjects\frontend\frontend\Logic\src\main\java\Logic" />
