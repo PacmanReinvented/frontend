@@ -169,33 +169,6 @@ public class Game extends Observable implements Observer {
         Character character = characterFromPlayerNr(playerNr);
         if (characterCanMove(character, direction, 1)) {
             character.moveTowards(direction);
-            if (character instanceof Pacman) {
-                //Now we go through all items and check if we need to eat them
-                Iterator iterator = items.iterator();
-                while (iterator.hasNext()) {
-                    Item item = (Item) iterator.next();
-                    if (item.collidesWith((character))) {
-                        ((Pacman) character).takeItem(item);
-                    }
-
-                }
-            }
-            //Are we pacman? then iterate over all ghosts
-            if (character instanceof Pacman) {
-                for (Ghost g : ghosts) {
-                    if (g.collidesWith(character)) {
-                        pacmanGhostDoCollision(g, (Pacman) character);
-                    }
-                }
-
-            }
-            //Are we a ghost? then just check collision with pacman. we do not need to collide with fellow ghosts
-            else if (character instanceof Ghost) {
-                if (pacman.collidesWith(character)) {
-                    pacmanGhostDoCollision((Ghost) character, pacman);
-                }
-            }
-
         } else {
             System.out.println("[Game.java] But we can't move " + character.toString() + "to " + direction);
         }
@@ -211,7 +184,24 @@ public class Game extends Observable implements Observer {
     }
 
     public void updateGame() {
-        //TODO set collision detection in this shit.
+        Pacman character = pacman;
+             //Now we go through all items and check if we need to eat them
+            Iterator iterator = items.iterator();
+            while (iterator.hasNext()) {
+                Item item = (Item) iterator.next();
+                if (item.collidesWith((character))) {
+                    character.takeItem(item);
+                }
+
+            }
+        //Now we iterate over all ghosts
+            for (Ghost g : ghosts) {
+                if (g.collidesWith(character)) {
+                    pacmanGhostDoCollision(g, character);
+                }
+            }
+            saveScores();
+
 
     }
 

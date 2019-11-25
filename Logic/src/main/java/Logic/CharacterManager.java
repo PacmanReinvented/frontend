@@ -55,6 +55,7 @@ public class CharacterManager implements IGuiLogic, Observer {
             MoveDirection dir = MoveDirection.values()[r.nextInt(MoveDirection.values().length)];
             game.moveCharacter(cpuNr, dir);
         }
+        game.updateGame();
         updateGUI();
     }
 
