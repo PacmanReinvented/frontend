@@ -7,7 +7,12 @@ public class SocketClientInputMessage extends SocketMessage {
     private MoveDirection inputType;
 
     public SocketClientInputMessage(MoveDirection inputType) {
+        this.setOperationType(SocketOperationType.INPUT);
         this.inputType = inputType;
+    }
+
+    public SocketClientInputMessage() {
+        this.setOperationType(SocketOperationType.INPUT);
     }
 
 
@@ -15,4 +20,7 @@ public class SocketClientInputMessage extends SocketMessage {
         return inputType;
     }
 
+    public void setInputType(MoveDirection inputType) {
+        this.inputType = inputType;
+    }
 }
