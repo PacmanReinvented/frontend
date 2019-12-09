@@ -26,6 +26,7 @@
         <module>DAL</module>
         <module>Interfaces</module>
         <module>UnitTesting</module>
+        <module>SocketShared</module>
     </modules>
 
 

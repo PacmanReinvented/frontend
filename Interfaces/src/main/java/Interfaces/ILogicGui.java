@@ -6,6 +6,6 @@ import Interfaces.enums.*;
 public interface ILogicGui {
     void updateCanvas(TileType[][] grid);
     void updateScoreboard(String[] scoreBoard);
-    void handleInput(InputTypes inputType);
+    void handleInput(MoveDirection inputType);
     void setID(int playerNr);
 }

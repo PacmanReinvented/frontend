@@ -1,6 +1,6 @@
 package Interfaces.enums;
 
-public enum InputTypes {
+public enum MoveDirection {
     //This is a separate enum from MoveDirection in the event you want more input than moving
     MOVEUP,
     MOVEDOWN,

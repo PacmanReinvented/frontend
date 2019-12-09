@@ -1,11 +1,10 @@
 package UI;
 
-import Enums.MoveDirection;
 import Interfaces.IGuiLogic;
 import Interfaces.ILogicGui;
 import Enums.TileType;
-import Logic.CharacterManager;
-import Interfaces.enums.InputTypes;
+import Interfaces.enums.MoveDirection;
+import SocketClient.GameClientMessageSender;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,7 +29,7 @@ public class Main extends Application implements ILogicGui
 
     private Pane createGameCanvas() throws IOException {
         GameCanvas.setPrefSize(600, 600);
-        Logic = new CharacterManager();
+        Logic = new GameClientMessageSender();
         Logic.registerPlayer(this,"Standalone");
         GameCanvas.setStyle("-fx-background-color: #5fc964; -fx-margin: 0;");
         TileType[][] grid = Logic.StartGame();
@@ -59,16 +58,16 @@ public class Main extends Application implements ILogicGui
         scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case A:
-                    handleInput(InputTypes.MOVELEFT);
+                    handleInput(MoveDirection.MOVELEFT);
                     break;
                 case D:
-                    handleInput(InputTypes.MOVERIGHT);
+                    handleInput(MoveDirection.MOVERIGHT);
                     break;
                 case W:
-                    handleInput(InputTypes.MOVEUP);
+                    handleInput(MoveDirection.MOVEUP);
                     break;
                 case S:
-                    handleInput(InputTypes.MOVEDOWN);
+                    handleInput(MoveDirection.MOVEDOWN);
                     break;
                 case SPACE:
                     //shoot(player);
@@ -141,20 +140,20 @@ public class Main extends Application implements ILogicGui
     }
 
     @Override
-    public void handleInput(InputTypes inputType) {
+    public void handleInput(MoveDirection inputType) {
 
         switch (inputType) {
             case MOVEUP:
-                Logic.Move(MoveDirection.UP, playerNr);
+                Logic.Move(Enums.MoveDirection.UP, playerNr);
                 break;
             case MOVEDOWN:
-                Logic.Move(MoveDirection.DOWN, playerNr);
+                Logic.Move(Enums.MoveDirection.DOWN, playerNr);
                 break;
             case MOVERIGHT:
-                Logic.Move(MoveDirection.RIGHT, playerNr);
+                Logic.Move(Enums.MoveDirection.RIGHT, playerNr);
                 break;
             case MOVELEFT:
-                Logic.Move(MoveDirection.LEFT, playerNr);
+                Logic.Move(Enums.MoveDirection.LEFT, playerNr);
                 break;
             default:
                 System.out.println("Input " + inputType + " has not yet been handled.");
