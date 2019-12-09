@@ -31,10 +31,11 @@ public class CharacterManager implements IPacmanServer, Observer {
         joinedClients.add(GUI);
 
         Random r = new Random();
-        int playerNr = r.nextInt();
+        int playerNr = GUI.getID();
         System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: " + playerNr);
         playerNames.put(playerNr, name);
         game.registerPlayer(playerNr);
+        /*
         int computerPlayerNr;
         for (int i = 0; i < amountOfComputerPlayers; i++) {
             computerPlayerNr = r.nextInt();//the chance for a match is not big enough for me to bother to implement that check for this iteration
@@ -42,7 +43,7 @@ public class CharacterManager implements IPacmanServer, Observer {
             computerPlayers.add(computerPlayerNr);
             playerNames.put(computerPlayerNr, "Computer Player #" + i + 1);
         }
-        GUI.setID(playerNr);
+         */
     }
 
     @Override

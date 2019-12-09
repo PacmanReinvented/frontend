@@ -9,5 +9,6 @@ module LOGIC {
     requires org.eclipse.jetty.websocket.javax.websocket.server;
     requires org.eclipse.jetty.websocket.javax.websocket;
     requires java.sql;
+    requires SOCKETSHARED;
     exports SocketServer;
 }

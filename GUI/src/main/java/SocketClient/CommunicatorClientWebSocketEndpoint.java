@@ -1,9 +1,9 @@
 package SocketClient;
 
 import Interfaces.IPacmanClient;
-import SocketMessage.SocketMessage;
-import SocketMessage.SocketOperationType;
+import SocketMessage.*;
 import com.google.gson.Gson;
+import javafx.application.Platform;
 
 import java.net.URI;
 import javax.websocket.ClientEndpoint;
@@ -18,6 +18,7 @@ import javax.websocket.WebSocketContainer;
 import javax.websocket.DeploymentException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 @ClientEndpoint
 public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
@@ -28,7 +29,7 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
     /**
      * The local websocket uri to connect to.
      */
-    private final String uri = "ws://localhost:8095/platform/";
+    private final String uri = "ws://localhost:8095/pacman/";
 
     private Session session;
 
@@ -113,8 +114,8 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
     }
 
     @Override
-    public void setGameClient(IPacmanClient platformGameClient) {
-        this.pacmanClient = platformGameClient;
+    public void setGameClient(IPacmanClient pacmanGameClient) {
+        this.pacmanClient = pacmanGameClient;
     }
 
 
@@ -176,8 +177,26 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
 
         // Parse incoming message
         SocketOperationType messageType = null;
-        System.out.println("Message received: "+jsonMessage);
+        System.out.println("Message received: " + jsonMessage);
+        SocketOperationType operationType = gson.fromJson(jsonMessage, SocketMessage.class).getOperationType();
 
-
+        switch (operationType) {
+            case POSITIONS:
+                SocketResponsePositionMessage positionMessage = gson.fromJson(jsonMessage, SocketResponsePositionMessage.class);
+                Platform.runLater(()-> {
+                pacmanClient.updateCanvas(positionMessage.getPositions());
+                });
+                break;
+            case GAMESTATE:
+                SocketResponseGameStateMessage gameStateMessage = gson.fromJson(jsonMessage, SocketResponseGameStateMessage.class);
+                System.out.println("[CommunicatorClientWebSocketEndpoint.java] Updating gamestate not yet supported on client");
+                break;
+            case SCORE:
+                SocketResponseScoreMessage scoreMessage = gson.fromJson(jsonMessage, SocketResponseScoreMessage.class);
+                Platform.runLater(()-> {
+                pacmanClient.updateScoreboard(scoreMessage.getScores());
+                });
+                break;
+        }
     }
 }

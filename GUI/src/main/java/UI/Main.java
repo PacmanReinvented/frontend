@@ -34,7 +34,7 @@ public class Main extends Application implements IPacmanClient
 
     private Pane createGameCanvas() throws IOException {
         GameCanvas.setPrefSize(600, 600);
-        Logic = new CharacterManager();
+        Logic = new GameClientMessageSender();
         Logic.registerPlayer(this,"Standalone");
         GameCanvas.setStyle("-fx-background-color: #5fc964; -fx-margin: 0;");
         startGameButton.setOnAction(new EventHandler<ActionEvent>() {

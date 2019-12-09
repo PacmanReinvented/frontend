@@ -2,7 +2,9 @@ package SocketClient;
 
 import Interfaces.IPacmanServer;
 import Interfaces.IPacmanClient;
+import SocketMessage.SocketClientInputMessage;
 import SocketMessage.SocketClientRegisterMessage;
+import SocketMessage.SocketClientStartGameMessage;
 import enums.MoveDirection;
 import enums.TileType;
 
@@ -25,7 +27,8 @@ public class GameClientMessageSender implements IPacmanServer {
 
     @Override
     public void Move(MoveDirection direction, IPacmanClient client) {
-        throw new UnsupportedOperationException("Method Move not implemented");
+        SocketClientInputMessage message = new SocketClientInputMessage(direction);
+        communicator.sendMessage(message);
     }
 
     @Override
@@ -35,7 +38,8 @@ public class GameClientMessageSender implements IPacmanServer {
 
     @Override
     public void StartGame(IPacmanClient client) {
-        throw new UnsupportedOperationException("Method StartGame not implemented");
+        SocketClientStartGameMessage message = new SocketClientStartGameMessage();
+        communicator.sendMessage(message);
     }
 
     @Override

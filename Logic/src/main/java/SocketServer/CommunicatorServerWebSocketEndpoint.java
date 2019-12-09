@@ -2,6 +2,7 @@ package SocketServer;
 import Interfaces.IPacmanServer;
 import Interfaces.IPacmanClient;
 import Logic.CharacterManager;
+import SocketMessage.*;
 import com.google.gson.Gson;
 
 import javax.websocket.*;
@@ -9,11 +10,11 @@ import javax.websocket.server.ServerEndpoint;
 import java.util.HashMap;
 import java.util.Map;
 
-@ServerEndpoint(value = "/platform/")
+@ServerEndpoint(value = "/pacman/")
 public class CommunicatorServerWebSocketEndpoint {
 
     // All sessions
-    private static Map<Session, IPacmanClient> sessionIPlatformGameClientMap = new HashMap<>();
+    private static Map<Session, IPacmanClient> sessionIPacmanClient = new HashMap<>();
 
     // Map each property to list of sessions that are subscribed to that property
     private static IPacmanServer gameServer = new CharacterManager();
@@ -22,12 +23,10 @@ public class CommunicatorServerWebSocketEndpoint {
     public void onConnect(Session session) {
         System.out.println("[WebSocket Connected] SessionID: " + session.getId());
         String message = String.format("[New client with client side session ID]: %s", session.getId());
-        /*
-        ILogicGui responseClient = new GameServerMessageSender(session);
-        sessionIPlatformGameClientMap.put(session, responseClient);
-        responseClient.setPlayerNr(sessionIPlatformGameClientMap.size());
-         */
-        System.out.println("[#sessions]: " + sessionIPlatformGameClientMap.size());
+        IPacmanClient responseClient = new GameServerMessageSender(session);
+        sessionIPacmanClient.put(session, responseClient);
+        responseClient.setID(sessionIPacmanClient.size());
+        System.out.println("[#sessions]: " + sessionIPacmanClient.size());
     }
 
     @OnMessage
@@ -39,7 +38,7 @@ public class CommunicatorServerWebSocketEndpoint {
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("[WebSocket Session ID] : " + session.getId() + " [Socket Closed]: " + reason);
-        sessionIPlatformGameClientMap.remove(session);
+        sessionIPacmanClient.remove(session);
     }
 
     @OnError
@@ -51,27 +50,22 @@ public class CommunicatorServerWebSocketEndpoint {
     // Handle incoming message from client
     private void handleMessageFromClient(String jsonMessage, Session session) {
         Gson gson = new Gson();
-        /*
-        GameClientMessageType messageType = gson.fromJson(jsonMessage, PlatformGameMessage.class).getMessageType();
-        IPlatformGameClient client = sessionIPlatformGameClientMap.get(session);
-        switch (messageType) {
-            case Login:
-                PlatformGameMessageLogin messageLogin = gson.fromJson(jsonMessage, PlatformGameMessageLogin.class);
-                gameServer.loginPlayer(messageLogin.getName(), messageLogin.getPassword(), client);
+        IPacmanClient client = sessionIPacmanClient.get(session);
+        SocketOperationType messageType = gson.fromJson(jsonMessage, SocketMessage.class).getOperationType();
+        switch (messageType){
+
+            case INPUT:
+                SocketClientInputMessage messageInput = gson.fromJson(jsonMessage, SocketClientInputMessage.class);
+                gameServer.Move(messageInput.getInputType(), client);
                 break;
-            case Register:
-                PlatformGameMessageRegister messageRegister = gson.fromJson(jsonMessage, PlatformGameMessageRegister.class);
-                gameServer.registerPlayer(messageRegister.getName(), messageRegister.getPassword(), client);
+            case REGISTER:
+                SocketClientRegisterMessage registerMessage = gson.fromJson(jsonMessage, SocketClientRegisterMessage.class);
+                gameServer.registerPlayer(client, registerMessage.getName());
                 break;
-            case Input:
-                PlatformGameMessageInput messageInput = gson.fromJson(jsonMessage, PlatformGameMessageInput.class);
-                gameServer.receiveInput(messageInput.getInputType(), client);
-                break;
-            case StartGame:
-                PlatformGameMessageStart messageStart = gson.fromJson(jsonMessage, PlatformGameMessageStart.class);
-                gameServer.startGame(client);
+            case STARTGAME:
+                gameServer.StartGame(client);
                 break;
         }
-         */
+
     }
 }
