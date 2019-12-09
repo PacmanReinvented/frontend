@@ -1,7 +1,7 @@
 package Interfaces;
 
-import Enums.MoveDirection;
-import Enums.TileType;
+import enums.MoveDirection;
+import enums.TileType;
 
 import java.io.IOException;
 
@@ -13,3 +13,4 @@ public interface IGuiLogic {
     void PauzeGame();
     String getScoreList();
 }
+

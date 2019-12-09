@@ -1,8 +1,10 @@
 package Logic;
 
-import Enums.TileType;
+import enums.TileType;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -69,3 +71,4 @@ public class MapReaderWriter {
 
 
 }
+

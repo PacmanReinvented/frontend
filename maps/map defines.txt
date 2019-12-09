@@ -1,7 +1,0 @@
-X = wall
-O = empty
-P = pacman spawnpoint
-G = ghost spawnpoint
-I = pallet
-S = super pallet
-F = fruit

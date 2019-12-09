@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Interfaces" />
-        <module name="DAL" />
-        <module name="UnitTesting" />
         <module name="GUI" />
-        <module name="Logic" />
+        <module name="RESTserver" />
+        <module name="INTERFACES" />
+        <module name="SOCKETSHARED" />
+        <module name="LOGIC" />
+        <module name="MODELS" />
+        <module name="UNIT_TESTS" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11" />

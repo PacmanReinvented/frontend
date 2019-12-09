@@ -1,11 +1,12 @@
 package Interfaces;
 
-import Enums.TileType;
-import Interfaces.enums.*;
+import Interfaces.enums.InputTypes;
+import enums.MoveDirection;
+import enums.TileType;
 
 public interface ILogicGui {
     void updateCanvas(TileType[][] grid);
     void updateScoreboard(String[] scoreBoard);
-    void handleInput(InputTypes inputType);
+    void handleInput(MoveDirection inputType);
     void setID(int playerNr);
 }

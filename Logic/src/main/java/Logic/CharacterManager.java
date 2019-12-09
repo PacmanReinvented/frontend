@@ -1,11 +1,11 @@
 package Logic;
 
-import Enums.GameState;
-import Enums.MoveDirection;
-import Enums.TileType;
 import Interfaces.IGuiLogic;
 import Interfaces.ILogicGui;
-import Models.Game;
+import classes.Game;
+import enums.GameState;
+import enums.MoveDirection;
+import enums.TileType;
 
 import java.io.IOException;
 import java.util.*;
@@ -120,3 +120,4 @@ public class CharacterManager implements IGuiLogic, Observer {
         }
     }
 }
+

@@ -1,6 +1,6 @@
 package SocketMessage;
 
-import Enums.TileType;
+import enums.TileType;
 
 public class SocketResponsePositionMessage extends SocketMessage {
 

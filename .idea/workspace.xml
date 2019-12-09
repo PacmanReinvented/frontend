@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UnitTesting/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/CharacterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/ItemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTesting/src/test/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-    </list>
+    <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,22 +11,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
-        <option value="Class" />
+        <option value="Enum" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -48,33 +25,25 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1RrriuBLsxj4uHGrkHrKQgzM4ms" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1Uk0ClAntiEjPanrEBM5eHKrxIn" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="Logic" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="UI" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\B_sch\IdeaProjects\frontend\frontend\Logic\src\main\java\Logic" />
-      <recent name="C:\Users\B_sch\IdeaProjects\frontend\GUI\src\main\java\UI\assets" />
+      <recent name="C:\Users\teunb\Documents\Semester 3\Proftaak\PacmanV2\LOGIC\src\main\java\Logic\resources" />
+      <recent name="C:\Users\teunb\Documents\Semester 3\Proftaak\PacmanV2\GUI\src\main\java\UI\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -89,7 +58,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.CommunicatorTest">
+    <configuration name="CommunicatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SocketServer.CommunicatorServer" />
+      <module name="LOGIC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SocketServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommunicatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SocketClient.CommunicatorTest" />
+      <module name="GUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SocketClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.Main" />
       <module name="GUI" />
@@ -103,52 +98,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UnitTesting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CharacterTest.ghostBecomeVulnerable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UnitTesting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
-      <option name="METHOD_NAME" value="ghostBecomeVulnerable" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CharacterTest.pacmanGetsEaten" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UnitTesting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CharacterTest" />
-      <option name="METHOD_NAME" value="pacmanGetsEaten" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemTest.cannotMoveThroughWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="UnitTesting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemTest" />
-      <option name="METHOD_NAME" value="cannotMoveThroughWall" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="RESTserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="services.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CommunicatorTest" />
+        <item itemvalue="Application.CommunicatorServer" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ItemTest.cannotMoveThroughWall" />
-        <item itemvalue="JUnit.CharacterTest.ghostBecomeVulnerable" />
-        <item itemvalue="JUnit.CharacterTest.pacmanGetsEaten" />
-        <item itemvalue="JUnit.CharacterTest" />
+        <item itemvalue="Spring Boot.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -157,64 +125,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="def5820e-537d-4206-a646-ddf7f2ae8d58" name="Default Changelist" comment="" />
-      <created>1570436185045</created>
+      <changelist id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="" />
+      <created>1575885160580</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570436185045</updated>
-      <workItem from="1570436188027" duration="3291000" />
-      <workItem from="1571662508283" duration="393000" />
-      <workItem from="1571679826320" duration="13000" />
-      <workItem from="1571726628050" duration="163000" />
-      <workItem from="1571835391664" duration="576000" />
+      <updated>1575885160580</updated>
+      <workItem from="1575885163179" duration="5100000" />
     </task>
-    <task id="LOCAL-00001" summary="fixed circular dependency">
-      <created>1571662805103</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1571662805103</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fixed circular dependency">
-      <created>1571835583357</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1571835583357</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Generate grid from csv file. Made it work Yheee">
-      <created>1571845066385</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1571845066385</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed circular dependency" />
-    <MESSAGE value="Generate grid from csv file. Made it work Yheee" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generate grid from csv file. Made it work Yheee" />
   </component>
 </project>

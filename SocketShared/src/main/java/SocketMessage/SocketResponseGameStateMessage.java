@@ -1,6 +1,6 @@
 package SocketMessage;
 
-import Enums.GameState;
+import enums.GameState;
 
 public class SocketResponseGameStateMessage extends SocketMessage{
 

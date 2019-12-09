@@ -1,6 +1,5 @@
-module SocketShared {
-    requires Interfaces;
-    requires PacmanReinvented;
+module SOCKETSHARED {
+    requires MODELS;
     opens SocketMessage;
     exports SocketMessage;
 }

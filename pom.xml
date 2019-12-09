@@ -4,29 +4,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>PTS3</groupId>
-    <artifactId>Pacman Reinvented</artifactId>
+    <groupId>pts3</groupId>
+    <artifactId>pacman</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>GUI</module>
+        <module>RESTserver</module>
+        <module>INTERFACES</module>
+        <module>LOGIC</module>
+        <module>MODELS</module>
+        <module>UNIT_TESTS</module>
+        <module>SOCKETSHARED</module>
+    </modules>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>GUI</module>
-        <module>Logic</module>
-        <module>DAL</module>
-        <module>Interfaces</module>
-        <module>UnitTesting</module>
-    </modules>
-
-
 </project>
