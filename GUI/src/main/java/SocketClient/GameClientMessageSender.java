@@ -1,14 +1,14 @@
 package SocketClient;
 
-import Interfaces.IGuiLogic;
-import Interfaces.ILogicGui;
+import Interfaces.IPacmanServer;
+import Interfaces.IPacmanClient;
 import SocketMessage.SocketClientRegisterMessage;
 import enums.MoveDirection;
 import enums.TileType;
 
 import java.io.IOException;
 
-public class GameClientMessageSender implements IGuiLogic {
+public class GameClientMessageSender implements IPacmanServer {
 
     private ICommunicator communicator = CommunicatorClientWebSocketEndpoint.getInstance();
 
@@ -17,33 +17,30 @@ public class GameClientMessageSender implements IGuiLogic {
     }
 
     @Override
-    public void registerPlayer(ILogicGui GUI, String name) {
+    public void registerPlayer(IPacmanClient GUI, String name) {
         SocketClientRegisterMessage message = new SocketClientRegisterMessage(name,"frits");
         communicator.sendMessage(message);
+        communicator.setGameClient(GUI);
     }
 
     @Override
-    public void Move(MoveDirection direction, int playerNr) {
-        throw new UnsupportedOperationException("method not implemented registerPlayer()");
+    public void Move(MoveDirection direction, IPacmanClient client) {
+        throw new UnsupportedOperationException("Method Move not implemented");
     }
 
     @Override
-    public void EndGame() {
-        throw new UnsupportedOperationException("method not implemented registerPlayer()");
+    public void EndGame(IPacmanClient client) {
+        throw new UnsupportedOperationException("Method EndGame not implemented");
     }
 
     @Override
-    public TileType[][] StartGame() throws IOException {
-        throw new UnsupportedOperationException("method not implemented registerPlayer()");
+    public void StartGame(IPacmanClient client) {
+        throw new UnsupportedOperationException("Method StartGame not implemented");
     }
 
     @Override
-    public void PauzeGame() {
-        throw new UnsupportedOperationException("method not implemented registerPlayer()");
+    public void PauzeGame(IPacmanClient client) {
+        throw new UnsupportedOperationException("Method PauzeGame not implemented");
     }
 
-    @Override
-    public String getScoreList() {
-        throw new UnsupportedOperationException("method not implemented registerPlayer()");
-    }
 }

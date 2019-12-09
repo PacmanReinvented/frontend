@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="" />
+    <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/ICommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/ICommunicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IGuiLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/ILogicGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/target/classes/Interfaces/IGuiLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/target/classes/Interfaces/ILogicGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="pacman" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -18,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -26,6 +51,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1Uk0ClAntiEjPanrEBM5eHKrxIn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -58,7 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CommunicatorTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="CommunicatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketServer.CommunicatorServer" />
       <module name="LOGIC" />
@@ -113,10 +139,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CommunicatorTest" />
-        <item itemvalue="Application.CommunicatorServer" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="Application.CommunicatorServer" />
+        <item itemvalue="Application.CommunicatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -130,11 +156,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575885160580</updated>
-      <workItem from="1575885163179" duration="5100000" />
+      <workItem from="1575885163179" duration="8782000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

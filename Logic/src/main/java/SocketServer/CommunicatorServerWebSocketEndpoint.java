@@ -1,6 +1,6 @@
 package SocketServer;
-import Interfaces.IGuiLogic;
-import Interfaces.ILogicGui;
+import Interfaces.IPacmanServer;
+import Interfaces.IPacmanClient;
 import Logic.CharacterManager;
 import com.google.gson.Gson;
 
@@ -13,10 +13,10 @@ import java.util.Map;
 public class CommunicatorServerWebSocketEndpoint {
 
     // All sessions
-    private static Map<Session, ILogicGui> sessionIPlatformGameClientMap = new HashMap<>();
+    private static Map<Session, IPacmanClient> sessionIPlatformGameClientMap = new HashMap<>();
 
     // Map each property to list of sessions that are subscribed to that property
-    private static IGuiLogic gameServer = new CharacterManager();
+    private static IPacmanServer gameServer = new CharacterManager();
 
     @OnOpen
     public void onConnect(Session session) {

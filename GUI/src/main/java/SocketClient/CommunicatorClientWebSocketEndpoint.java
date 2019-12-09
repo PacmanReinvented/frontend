@@ -1,6 +1,6 @@
 package SocketClient;
 
-import Interfaces.ILogicGui;
+import Interfaces.IPacmanClient;
 import SocketMessage.SocketMessage;
 import SocketMessage.SocketOperationType;
 import com.google.gson.Gson;
@@ -36,7 +36,7 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
 
     private Gson gson = null;
 
-    private ILogicGui pacmanClient;
+    private IPacmanClient pacmanClient;
 
     // Status of the webSocket client
     boolean isRunning = false;
@@ -113,7 +113,7 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
     }
 
     @Override
-    public void setGameClient(ILogicGui platformGameClient) {
+    public void setGameClient(IPacmanClient platformGameClient) {
         this.pacmanClient = platformGameClient;
     }
 

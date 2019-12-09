@@ -1,39 +1,56 @@
 package UI;
 
-import Interfaces.IGuiLogic;
-import Interfaces.ILogicGui;
+import Interfaces.IPacmanServer;
+import Interfaces.IPacmanClient;
+import Logic.CharacterManager;
 import SocketClient.GameClientMessageSender;
 import enums.MoveDirection;
 import enums.TileType;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main extends Application implements ILogicGui
+public class Main extends Application implements IPacmanClient
 {
     private Pane GameCanvas = new Pane();
     private Pane ScoreCanvas = new Pane();
     private Pane Container = new Pane();
 
+    private Button startGameButton = new Button();
+
     private double t = 0;
     private int playerNr = 1;
     //TODO get rid of the following thing for the server version
-    IGuiLogic Logic;
+    IPacmanServer Logic;
 
 
     private Pane createGameCanvas() throws IOException {
         GameCanvas.setPrefSize(600, 600);
-        Logic = new GameClientMessageSender();
+        Logic = new CharacterManager();
         Logic.registerPlayer(this,"Standalone");
         GameCanvas.setStyle("-fx-background-color: #5fc964; -fx-margin: 0;");
-        TileType[][] grid = Logic.StartGame();
-        updateCanvas(grid);
+        startGameButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                startGame();
+            }
+        });
+        ScoreCanvas.getChildren().add(startGameButton);
+        startGameButton.setText("Start Game");
+        //updateCanvas(grid);
         return GameCanvas;
+    }
+    private void startGame()
+    {
+        Logic.StartGame(this);
     }
 
     private Pane createScoreCanvas() throws IOException {
@@ -143,23 +160,20 @@ public class Main extends Application implements ILogicGui
 
         switch (inputType) {
             case UP:
-                Logic.Move(enums.MoveDirection.UP, playerNr);
+                Logic.Move(enums.MoveDirection.UP, this);
                 break;
             case DOWN:
-                Logic.Move(enums.MoveDirection.DOWN, playerNr);
+                Logic.Move(enums.MoveDirection.DOWN, this);
                 break;
             case RIGHT:
-                Logic.Move(enums.MoveDirection.RIGHT, playerNr);
+                Logic.Move(enums.MoveDirection.RIGHT, this);
                 break;
             case LEFT:
-                Logic.Move(enums.MoveDirection.LEFT, playerNr);
+                Logic.Move(enums.MoveDirection.LEFT, this);
                 break;
             default:
                 System.out.println("Input " + inputType + " has not yet been handled.");
         }
-        String[] myStringArray = {Logic.getScoreList()};
-        updateScoreboard(myStringArray);
-        System.out.println(myStringArray[0]);
         //TODO send to a thing
         //throw new UnsupportedOperationException();
     }
@@ -167,5 +181,17 @@ public class Main extends Application implements ILogicGui
     @Override
     public void setID(int playerNr) {
         this.playerNr = playerNr;
+    }
+
+    @Override
+    public void sendScoreList(String[] scores)
+    {
+        updateScoreboard(scores);
+        System.out.println(scores[0]);
+    }
+
+    @Override
+    public int getID() {
+        return this.playerNr;
     }
 }

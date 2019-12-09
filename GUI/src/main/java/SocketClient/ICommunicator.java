@@ -1,6 +1,6 @@
 package SocketClient;
 
-import Interfaces.ILogicGui;
+import Interfaces.IPacmanClient;
 import SocketMessage.SocketMessage;
 
 /**
@@ -37,6 +37,6 @@ public interface ICommunicator {
      * Sets the game client to do things with on message responses
      * @param platformGameClient the instance where we will send back stuff to
      */
-    public void setGameClient(ILogicGui platformGameClient);
+    public void setGameClient(IPacmanClient platformGameClient);
 
 }

@@ -7,6 +7,7 @@ module GUI {
     requires SOCKETSHARED;
     requires gson;
     requires java.sql;
+    requires javafx.controls;
     requires javax.websocket.api;
     opens UI;
     exports UI;

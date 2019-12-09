@@ -24,7 +24,7 @@ public class CommunicatorServer {
     // Start the web socket server
     private static void startWebSocketServer() {
 
-        System.setProperty("org.eclipse.jetty.LEVEL", "ALL");
+        System.setProperty("org.eclipse.jetty.LEVEL", "INFO");
         Server webSocketServer = new Server();
         ServerConnector connector = new ServerConnector(webSocketServer);
         connector.setPort(PORT);

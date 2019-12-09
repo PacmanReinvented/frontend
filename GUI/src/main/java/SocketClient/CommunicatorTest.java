@@ -1,11 +1,11 @@
 package SocketClient;
 
-import Interfaces.IGuiLogic;
+import Interfaces.IPacmanServer;
 
 public class CommunicatorTest {
 
     public static void main(String[] args) {
-        IGuiLogic server = new GameClientMessageSender();
+        IPacmanServer server = new GameClientMessageSender();
         server.registerPlayer(null,"mr test");
     }
 }
