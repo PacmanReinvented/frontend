@@ -8,5 +8,6 @@ public enum TileType
     SUPERPALLET,
     EMPTY,
     GHOST,
+    GHOSTVULNERABLE,
     FRUIT
 }

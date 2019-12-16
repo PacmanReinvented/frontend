@@ -8,7 +8,7 @@ import enums.TileType;
 import java.util.*;
 import static enums.TileType.*;
 
-public class Game extends Observable implements Observer {
+public class Game extends Observable implements Observer, ISuperPalletListener {
     private List<Wall> walls;
     private List<Item> items;
     private List<Ghost> ghosts;
@@ -130,12 +130,12 @@ public class Game extends Observable implements Observer {
                         break;
 
                     case PALLET:
-                        Pallet pallet = new Pallet(i, j, false);
+                        Pallet pallet = new Pallet(i, j, false, this);
                         pallet.addObserver(this);
                         items.add(pallet);
                         break;
                     case SUPERPALLET:
-                        Pallet superpallet = new Pallet(i, j, true);
+                        Pallet superpallet = new Pallet(i, j, true, this);
                         superpallet.addObserver(this);
                         items.add(superpallet);
                         break;
@@ -257,7 +257,7 @@ public class Game extends Observable implements Observer {
         tiles[pacman.getPosX()][pacman.getPosY()] = PACMAN;
         //adding ghosts
         for (Ghost g : ghosts) {
-            tiles[g.getPosX()][g.getPosY()] = GHOST;//TODO ghost tile;
+            tiles[g.getPosX()][g.getPosY()] = (g.isVulnerable()) ? GHOSTVULNERABLE : GHOST;//TODO ghost tile;
         }
         return tiles;
     }
@@ -274,6 +274,13 @@ public class Game extends Observable implements Observer {
         if (observable instanceof Item) {
             System.out.println(o.toString() + " ate an item.");
             ((Item) observable).setEaten(true);
+        }
+    }
+
+    @Override
+    public void palletWasEaten(Pallet pallet) {
+        for (Ghost ghost : ghosts) {
+            ghost.setVulnerable(true);
         }
     }
 }
