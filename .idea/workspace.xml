@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketClientStartGameMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/UI/EntityFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/target/classes/UI/EntityFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MODELS/src/main/java/classes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/MODELS/src/main/java/classes/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MODELS/src/main/java/classes/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/MODELS/src/main/java/classes/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/ItemTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +48,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -79,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CommunicatorServer">
+  <component name="RunManager" selected="Compound.Start 2 clients">
     <configuration name="CommunicatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketServer.CommunicatorServer" />
       <module name="LOGIC" />
@@ -179,7 +173,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575885160580</updated>
-      <workItem from="1575885163179" duration="11888000" />
+      <workItem from="1575885163179" duration="11998000" />
+      <workItem from="1575963327551" duration="22000" />
+      <workItem from="1575965718065" duration="845000" />
+      <workItem from="1576483494460" duration="3759000" />
+      <workItem from="1576492791860" duration="54000" />
+      <workItem from="1576492860531" duration="542000" />
     </task>
     <task id="LOCAL-00001" summary="refactored interfaces to support websocket operations">
       <created>1575894399763</created>
@@ -188,7 +187,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575894399763</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="working network connection between players using websockets">
+      <created>1575897495507</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575897495507</updated>
+    </task>
+    <task id="LOCAL-00003" summary="working network connection between players using websockets v2">
+      <created>1575897549521</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575897549521</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +212,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -207,6 +222,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored interfaces to support websocket operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored interfaces to support websocket operations" />
+    <MESSAGE value="working network connection between players using websockets" />
+    <MESSAGE value="working network connection between players using websockets v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="working network connection between players using websockets v2" />
   </component>
 </project>

@@ -33,12 +33,12 @@ public class ItemTest
     @Test
     public void palletIsSuper()
     {
-        Pallet pallet = new Pallet(0,0, true);
+        Pallet pallet = new Pallet(0,0, true, null);
         boolean expected = true;
         boolean actual = pallet.isSuper();
         Assert.assertEquals(expected, actual);
 
-        Pallet pallet2 = new Pallet(0,0, false);
+        Pallet pallet2 = new Pallet(0,0, false, null);
         boolean expected2 = false;
         boolean actual2 = pallet2.isSuper();
         Assert.assertEquals(expected2, actual2);

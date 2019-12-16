@@ -4,7 +4,7 @@ import enums.MoveDirection;
 
 public class Ghost extends Character {
     // fields
-    private final static int maxVulnerableTime = 50;
+    private final static int maxVulnerableTime = 15;
     private int currentVurnerableTime = 0;
     private int startX,startY;
     // constructor
@@ -38,6 +38,7 @@ public class Ghost extends Character {
         resetVulnerable();
         setPosX(startX);
         setPosY(startY);
+        pacman.addScore(1200);
     }
 
     void resetVulnerable(){

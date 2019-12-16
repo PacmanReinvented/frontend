@@ -194,7 +194,10 @@ public class Game extends Observable implements Observer, ISuperPalletListener {
         //Now we iterate over all ghosts
         for (Ghost g : ghosts) {
             if (g.collidesWith(character)) {
-                pacmanGhostDoCollision(g, character);
+                if(g.isVulnerable()){
+                    g.beEaten(character);
+                }
+                else pacmanGhostDoCollision(g, character);
             }
         }
         saveScores();
