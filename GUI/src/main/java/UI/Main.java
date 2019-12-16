@@ -130,6 +130,10 @@ public class Main extends Application implements IPacmanClient
                         break;
                     case GHOST:
                         GameCanvas.getChildren().add(EntityFactory.drawGhost(j,i,w,h));
+                        break;
+                    case GHOSTVULNERABLE:
+                        GameCanvas.getChildren().add(EntityFactory.drawVulnGhost(j,i,w,h));
+                        break;
                     case EMPTY:
                         break;
                     default:
