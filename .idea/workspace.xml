@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/Enums/LoginState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/Enums/RegisterState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketClientLoginMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/GameServerMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/GameServerMessageSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RESTclient/src/main/java/client/IRestTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/RESTclient/src/main/java/client/IRestTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RESTclient/src/main/java/client/REST.java" beforeDir="false" afterPath="$PROJECT_DIR$/RESTclient/src/main/java/client/REST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RESTserver/src/main/java/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RESTserver/src/main/java/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +32,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="module-info" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -83,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main 2">
     <configuration name="CommunicatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketServer.CommunicatorServer" />
       <module name="LOGIC" />
@@ -197,7 +208,8 @@
       <workItem from="1578301206348" duration="5073000" />
       <workItem from="1578310534698" duration="17000" />
       <workItem from="1578844950772" duration="480000" />
-      <workItem from="1578902449974" duration="6701000" />
+      <workItem from="1578902449974" duration="8553000" />
+      <workItem from="1578916100729" duration="3474000" />
     </task>
     <task id="LOCAL-00001" summary="refactored interfaces to support websocket operations">
       <created>1575894399763</created>
@@ -234,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578907869908</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="working register REST">
+      <created>1578909454176</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578909454176</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +278,18 @@
     <MESSAGE value="working network connection between players using websockets v2" />
     <MESSAGE value="superpallets fixed" />
     <MESSAGE value="bunch of shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="bunch of shit" />
+    <MESSAGE value="working register REST" />
+    <option name="LAST_COMMIT_MESSAGE" value="working register REST" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LOGIC/src/main/java/Logic/CharacterManager.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

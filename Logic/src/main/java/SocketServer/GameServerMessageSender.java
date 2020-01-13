@@ -1,5 +1,7 @@
 package SocketServer;
 
+import Enums.LoginState;
+import Enums.RegisterState;
 import Interfaces.IPacmanClient;
 import SocketMessage.*;
 import com.google.gson.Gson;
@@ -51,6 +53,21 @@ public class GameServerMessageSender implements IPacmanClient {
     public void receiveGameState(GameState gameState) {
         SocketResponseGameStateMessage message = new SocketResponseGameStateMessage();
         message.setGameState(gameState);
+        sendMessage(message);
+    }
+
+    @Override
+    public void receiveLoginState(LoginState loginState, String username) {
+        SocketResponseLoginMessage message = new SocketResponseLoginMessage();
+        message.setLoginState(loginState);
+        message.setName(username);
+        sendMessage(message);
+    }
+
+    @Override
+    public void receiveRegisterState(RegisterState registerState) {
+        SocketResponseRegisterMessage message = new SocketResponseRegisterMessage();
+        message.setRegisterState(registerState);
         sendMessage(message);
     }
 

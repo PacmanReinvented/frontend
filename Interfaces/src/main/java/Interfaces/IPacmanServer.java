@@ -6,7 +6,8 @@ import enums.TileType;
 import java.io.IOException;
 
 public interface IPacmanServer {
-    void registerPlayer(IPacmanClient GUI, String name);
+    void loginPlayer(IPacmanClient GUI, String name, String password);
+    void registerPlayer(IPacmanClient GUI, String name, String password);
     void Move(MoveDirection direction, IPacmanClient client);
     void EndGame(IPacmanClient client);
     void StartGame(IPacmanClient client);

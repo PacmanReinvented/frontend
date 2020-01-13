@@ -58,9 +58,13 @@ public class CommunicatorServerWebSocketEndpoint {
                 SocketClientInputMessage messageInput = gson.fromJson(jsonMessage, SocketClientInputMessage.class);
                 gameServer.Move(messageInput.getInputType(), client);
                 break;
+            case LOGIN:
+                SocketClientLoginMessage loginMessage = gson.fromJson(jsonMessage, SocketClientLoginMessage.class);
+                gameServer.loginPlayer(client, loginMessage.getName(), loginMessage.getPassword());
+                break;
             case REGISTER:
                 SocketClientRegisterMessage registerMessage = gson.fromJson(jsonMessage, SocketClientRegisterMessage.class);
-                gameServer.registerPlayer(client, registerMessage.getName());
+                gameServer.registerPlayer(client, registerMessage.getName(), registerMessage.getPassword());
                 break;
             case STARTGAME:
                 gameServer.StartGame(client);

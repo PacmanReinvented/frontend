@@ -1,10 +1,13 @@
 package UI;
 
+import Enums.LoginState;
+import Enums.RegisterState;
 import Interfaces.IPacmanServer;
 import Interfaces.IPacmanClient;
 import SocketClient.GameClientMessageSender;
 import client.IRestTemplate;
 import client.REST;
+import com.mysql.cj.log.Log;
 import entities.User;
 import enums.GameState;
 import enums.MoveDirection;
@@ -45,7 +48,7 @@ public class Main extends Application implements IPacmanClient {
     private Pane createGameCanvas() throws IOException {
         GameCanvas.setPrefSize(600, 600);
         Logic = new GameClientMessageSender();
-        Logic.registerPlayer(this, "Standalone");
+        //Logic.loginPlayer(this, "Standalone");
         GameCanvas.setStyle("-fx-background-color: #5fc964; -fx-margin: 0;");
         startGameButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -53,6 +56,7 @@ public class Main extends Application implements IPacmanClient {
                 startGame();
             }
         });
+        startGameButton.setDisable(true);
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -127,15 +131,16 @@ public class Main extends Application implements IPacmanClient {
         }
     }
     private void registerUser(){
-        if (restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()))) {
+        /*if (restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()))) {
             showMessage("Registration Successful!",true);
         } else {
             showMessage("Registration Failed!",true);
-        }
+        } */
+        Logic.registerPlayer(this, tbUsername.getText(), tbPassword.getText());
     }
 
     private void loginUser() {
-        try {
+        /*try {
             User user = restTemplate.loginUser(tbUsername.getText(), tbPassword.getText());
             if (user != null) {
                 showMessage("Login Successful!",true);
@@ -144,7 +149,8 @@ public class Main extends Application implements IPacmanClient {
             }
         } catch (Exception e) {
             showMessage("Username doesn't exist!",true);
-        }
+        } */
+        Logic.loginPlayer(this, tbUsername.getText(), tbPassword.getText());
     }
 
     @Override
@@ -298,6 +304,45 @@ public class Main extends Application implements IPacmanClient {
                 break;
         }
         showMessage(message,false);
+    }
+
+    @Override
+    public void receiveLoginState(LoginState loginState, String username) {
+        if(loginState == LoginState.SUCCESS){startGameButton.setDisable(false); }
+        String message;
+        switch(loginState){
+            case SUCCESS:
+                message = "Login Successful";
+                break;
+            case WRONGPASS:
+                message = "Login Failed! Incorrect Password!";
+                break;
+            case WRONGUSER:
+                message = "Login Failed! User doesn't exist!";
+                break;
+            default:
+                message = "Unknown LoginState";
+        }
+        showMessage(message, false);
+    }
+
+    @Override
+    public void receiveRegisterState(RegisterState registerState) {
+        String message;
+        switch(registerState){
+            case SUCCESS:
+                message = "Registration Successful!";
+                break;
+            case INVALIDDATA:
+                message = "Registration Failed! Username or Password too short!";
+                break;
+            case USEREXISTS:
+                message = "Registration Failed! User already exists!";
+                break;
+            default:
+                message = "Unknown RegisterState: " + registerState;
+        }
+        showMessage(message, false);
     }
 
     @Override

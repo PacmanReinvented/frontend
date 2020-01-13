@@ -1,8 +1,13 @@
 package Logic;
 
+import Enums.LoginState;
+import Enums.RegisterState;
 import Interfaces.IPacmanServer;
 import Interfaces.IPacmanClient;
 import classes.Game;
+import client.IRestTemplate;
+import client.REST;
+import entities.User;
 import enums.GameState;
 import enums.MoveDirection;
 import enums.TileType;
@@ -18,6 +23,7 @@ public class CharacterManager implements IPacmanServer, Observer {
     private Map<Integer, String> playerNames = new HashMap<>();
     private final int amountOfComputerPlayers = 1;
     private Random r = new Random();
+    private IRestTemplate restTemplate = new REST();
 
     private List<IPacmanClient> joinedClients = new ArrayList<>();
 
@@ -28,22 +34,35 @@ public class CharacterManager implements IPacmanServer, Observer {
     }
 
     @Override
-    public void registerPlayer(IPacmanClient GUI, String name) {
-        joinedClients.add(GUI);
-
-        int playerNr = GUI.getID();
-        System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: " + playerNr);
-        playerNames.put(playerNr, name);
-        game.registerPlayer(playerNr);
-        /*
-        int computerPlayerNr;
-        for (int i = 0; i < amountOfComputerPlayers; i++) {
-            computerPlayerNr = r.nextInt();//the chance for a match is not big enough for me to bother to implement that check for this iteration
-            game.registerPlayer(computerPlayerNr);
-            computerPlayers.add(computerPlayerNr);
-            playerNames.put(computerPlayerNr, "Computer Player #" + i + 1);
+    public void loginPlayer(IPacmanClient GUI, String name, String password) {
+        LoginState loginState = null;
+        try {
+            User user = restTemplate.loginUser(name, password);
+            if (user != null) {
+                joinedClients.add(GUI);
+                loginState = LoginState.SUCCESS;
+                int playerNr = GUI.getID();
+                System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: " + playerNr);
+                playerNames.put(playerNr, name);
+                game.registerPlayer(playerNr);
+            } else {
+                loginState = LoginState.WRONGPASS;
+            }
+        } catch (Exception e) {
+            loginState = LoginState.WRONGUSER;
         }
-         */
+        finally {
+            GUI.receiveLoginState(loginState,name);
+        }
+    }
+
+    @Override
+    public void registerPlayer(IPacmanClient GUI, String name, String password) {
+        User user = new User(name, password);
+        RegisterState registerState;
+        if(restTemplate.registerUser(user)){registerState = RegisterState.SUCCESS;}
+        else{registerState = RegisterState.USEREXISTS;}
+        GUI.receiveRegisterState(registerState);
     }
 
     @Override
@@ -63,8 +82,9 @@ public class CharacterManager implements IPacmanServer, Observer {
         if (scorelist == null) return;
         Iterator it = scorelist.keySet().iterator();
         int i = 0;
+        scores = new String[scorelist.size()];
         while (it.hasNext()) {
-            scores = new String[scorelist.size()];
+
             int key = (Integer) it.next();
             int score = scorelist.get(key);
             String name = playerNames.get(key);

@@ -1,5 +1,7 @@
 package Interfaces;
 
+import Enums.LoginState;
+import Enums.RegisterState;
 import Interfaces.enums.InputTypes;
 import enums.GameState;
 import enums.MoveDirection;
@@ -12,5 +14,7 @@ public interface IPacmanClient {
     void setID(int playerNr);
     void sendScoreList(String[] scores);
     void receiveGameState(GameState gameState);
+    void receiveLoginState(LoginState loginState, String username);
+    void receiveRegisterState(RegisterState registerState);
     int getID();
 }

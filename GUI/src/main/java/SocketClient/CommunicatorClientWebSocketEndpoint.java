@@ -197,6 +197,17 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
                 pacmanClient.updateScoreboard(scoreMessage.getScores());
                 });
                 break;
+            case LOGINRESPONSE:
+                SocketResponseLoginMessage loginMessage = gson.fromJson(jsonMessage, SocketResponseLoginMessage.class);
+                Platform.runLater(()-> {
+                    pacmanClient.receiveLoginState(loginMessage.getLoginState(), loginMessage.getName());
+                });
+                break;
+            case REGISTERRESPONSE:
+                SocketResponseRegisterMessage registerMessage = gson.fromJson(jsonMessage, SocketResponseRegisterMessage.class);
+                Platform.runLater(()-> {
+                    pacmanClient.receiveRegisterState(registerMessage.getRegisterState());
+                });
         }
     }
 }

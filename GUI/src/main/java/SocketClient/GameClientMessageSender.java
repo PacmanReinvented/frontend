@@ -3,6 +3,7 @@ package SocketClient;
 import Interfaces.IPacmanServer;
 import Interfaces.IPacmanClient;
 import SocketMessage.SocketClientInputMessage;
+import SocketMessage.SocketClientLoginMessage;
 import SocketMessage.SocketClientRegisterMessage;
 import SocketMessage.SocketClientStartGameMessage;
 import enums.MoveDirection;
@@ -16,11 +17,19 @@ public class GameClientMessageSender implements IPacmanServer {
     }
 
     @Override
-    public void registerPlayer(IPacmanClient GUI, String name) {
-        SocketClientRegisterMessage message = new SocketClientRegisterMessage(name,"frits");
+    public void loginPlayer(IPacmanClient GUI, String name, String password) {
+        SocketClientLoginMessage message = new SocketClientLoginMessage(name,password);
         communicator.sendMessage(message);
         communicator.setGameClient(GUI);
     }
+
+    @Override
+    public void registerPlayer(IPacmanClient GUI, String name, String password) {
+        SocketClientRegisterMessage message = new SocketClientRegisterMessage(name, password);
+        communicator.sendMessage(message);
+        communicator.setGameClient(GUI);
+    }
+
 
     @Override
     public void Move(MoveDirection direction, IPacmanClient client) {
