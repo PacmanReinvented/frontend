@@ -21,11 +21,6 @@ public class REST implements IRestTemplate
         User result = restTemplate.getForObject("http://localhost:8096/user/{username}/{pass}", User.class, params);
         return result;
     }
-    /*@Override
-    public User checkUserExists(String username)
-    {
-
-    } */
     @Override
     public boolean registerUser(User user)
     {
@@ -35,8 +30,7 @@ public class REST implements IRestTemplate
         try {
             restTemplate.postForObject(query, user, User.class);
             state = true;
-        } catch (RestClientException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             state = false;
         }
         return state;
