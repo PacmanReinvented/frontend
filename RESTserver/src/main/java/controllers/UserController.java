@@ -36,11 +36,11 @@ public class UserController
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<String> createUser(@RequestBody User user)
     {
-        try {
+        if(!checkUserExists(user.getUsername())) {
             userRepository.save(user);
             return new ResponseEntity(HttpStatus.OK);
         }
-        catch (Exception e){
+        else {
             return new ResponseEntity(HttpStatus.CONFLICT);
         }
     }
@@ -49,7 +49,7 @@ public class UserController
     {
         boolean state;
         User checkUser = userRepository.findByUsername(username);
-        if(checkUser.getUsername().equals(username))
+        if(checkUser != null)
         {
             state = true;
         }

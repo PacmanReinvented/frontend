@@ -126,10 +126,8 @@ public class Main extends Application implements IPacmanClient {
             });
         }
     }
-
-    private void registerUser() {
-        boolean register = restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()));
-        if (register = true) {
+    private void registerUser(){
+        if (restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()))) {
             showMessage("Registration Successful!",true);
         } else {
             showMessage("Registration Failed!",true);
