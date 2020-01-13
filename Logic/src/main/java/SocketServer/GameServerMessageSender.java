@@ -3,6 +3,7 @@ package SocketServer;
 import Interfaces.IPacmanClient;
 import SocketMessage.*;
 import com.google.gson.Gson;
+import enums.GameState;
 import enums.MoveDirection;
 import enums.TileType;
 
@@ -43,6 +44,13 @@ public class GameServerMessageSender implements IPacmanClient {
     @Override
     public void sendScoreList(String[] scores) {
         SocketResponseScoreMessage message = new SocketResponseScoreMessage(scores);
+        sendMessage(message);
+    }
+
+    @Override
+    public void receiveGameState(GameState gameState) {
+        SocketResponseGameStateMessage message = new SocketResponseGameStateMessage();
+        message.setGameState(gameState);
         sendMessage(message);
     }
 

@@ -68,6 +68,7 @@ public class CharacterManager implements IPacmanServer, Observer {
             int key = (Integer) it.next();
             int score = scorelist.get(key);
             String name = playerNames.get(key);
+            if(key == game.getCurrentPacman()) name += " (Pacman)";
             scores[i] = name + ": " + score;
             i++;
         }
@@ -127,6 +128,9 @@ public class CharacterManager implements IPacmanServer, Observer {
                 System.out.println("[CharacterManager.java] the game has ended.");
                 //TODO send some feedback to players
                 break;
+        }
+        for (IPacmanClient joinedClient : joinedClients) {
+            joinedClient.receiveGameState(state);
         }
     }
 }

@@ -286,4 +286,8 @@ public class Game extends Observable implements Observer, ISuperPalletListener {
             ghost.setVulnerable(true);
         }
     }
+
+    public int getCurrentPacman(){
+        return currentPacman;
+    }
 }

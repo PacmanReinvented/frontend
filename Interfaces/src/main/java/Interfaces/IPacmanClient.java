@@ -1,6 +1,7 @@
 package Interfaces;
 
 import Interfaces.enums.InputTypes;
+import enums.GameState;
 import enums.MoveDirection;
 import enums.TileType;
 
@@ -10,5 +11,6 @@ public interface IPacmanClient {
     void handleInput(MoveDirection inputType);
     void setID(int playerNr);
     void sendScoreList(String[] scores);
+    void receiveGameState(GameState gameState);
     int getID();
 }
