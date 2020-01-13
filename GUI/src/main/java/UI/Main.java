@@ -2,16 +2,21 @@ package UI;
 
 import Interfaces.IPacmanServer;
 import Interfaces.IPacmanClient;
-import Logic.CharacterManager;
 import SocketClient.GameClientMessageSender;
+import client.IRestTemplate;
+import client.REST;
+import entities.User;
 import enums.MoveDirection;
 import enums.TileType;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -25,11 +30,16 @@ public class Main extends Application implements IPacmanClient
     private Pane Container = new Pane();
 
     private Button startGameButton = new Button();
+    private Button loginButton = new Button();
+    private Button registerButton = new Button();
+    private TextField tbUsername = new TextField();
+    private TextField tbPassword = new TextField();
 
     private double t = 0;
     private int playerNr = 1;
     //TODO get rid of the following thing for the server version
-    IPacmanServer Logic;
+    private IPacmanServer Logic;
+    private IRestTemplate restTemplate = new REST();
 
 
     private Pane createGameCanvas() throws IOException {
@@ -43,8 +53,34 @@ public class Main extends Application implements IPacmanClient
                 startGame();
             }
         });
+        loginButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                loginUser();
+            }
+        });
+        registerButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                registerUser();
+            }
+        });
         ScoreCanvas.getChildren().add(startGameButton);
+        ScoreCanvas.getChildren().add(tbUsername);
+        ScoreCanvas.getChildren().add(tbPassword);
+        ScoreCanvas.getChildren().add(loginButton);
+        ScoreCanvas.getChildren().add(registerButton);
         startGameButton.setText("Start Game");
+        registerButton.setText("Register User");
+        loginButton.setText("Login User");
+        tbUsername.setLayoutX(50);
+        tbUsername.setLayoutY(100);
+        tbPassword.setLayoutX(50);
+        tbPassword.setLayoutY(150);
+        loginButton.setLayoutX(50);
+        loginButton.setLayoutY(200);
+        registerButton.setLayoutX(50);
+        registerButton.setLayoutY(250);
         //updateCanvas(grid);
         return GameCanvas;
     }
@@ -65,6 +101,38 @@ public class Main extends Application implements IPacmanClient
         Container.getChildren().add(createGameCanvas());
         Container.getChildren().add(createScoreCanvas());
         return Container;
+    }
+    private void showMessage(final String message)
+    {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Pacman");
+                alert.setContentText(message);
+                alert.showAndWait();
+            }
+        });
+    }
+    private void registerUser(){
+        boolean register = restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()));
+        if(register = true){
+            showMessage("Registration Successful!");
+        }
+        else{showMessage("Registration Failed!");}
+    }
+    private void loginUser()
+    {
+        try {
+            User user = restTemplate.loginUser(tbUsername.getText(), tbPassword.getText());
+            if (user != null) {
+                showMessage("Login Successful!");
+            } else {
+                showMessage("Login Failed! Incorrect Password");
+            }
+        } catch (Exception e) {
+            showMessage("Username doesn't exist!");
+        }
     }
 
     @Override
@@ -148,13 +216,13 @@ public class Main extends Application implements IPacmanClient
     public void updateScoreboard(String[] scoreBoard) {
         //TODO poll Game Interface for some scores
         ScoreCanvas.getChildren().clear();
-        for (int i = 0; i < scoreBoard.length; i++)
+        for (double i = 0; i < scoreBoard.length; i++)
         {
             Text txt = new Text();
             txt.setStyle("-fx-fill: white; -fx-font: 14pxf Tahoma;");
             txt.setX(25);
             txt.setY(50 + (i * 40));
-            txt.setText(scoreBoard[i]);
+            txt.setText(scoreBoard[(int) i]);
             ScoreCanvas.getChildren().add(txt);
         }
     }

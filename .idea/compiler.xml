@@ -12,6 +12,7 @@
         <module name="SOCKETSHARED" />
         <module name="LOGIC" />
         <module name="MODELS" />
+        <module name="RESTclient" />
         <module name="UNIT_TESTS" />
       </profile>
     </annotationProcessing>

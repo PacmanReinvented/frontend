@@ -6,9 +6,6 @@ import SocketMessage.SocketClientInputMessage;
 import SocketMessage.SocketClientRegisterMessage;
 import SocketMessage.SocketClientStartGameMessage;
 import enums.MoveDirection;
-import enums.TileType;
-
-import java.io.IOException;
 
 public class GameClientMessageSender implements IPacmanServer {
 
@@ -43,8 +40,8 @@ public class GameClientMessageSender implements IPacmanServer {
     }
 
     @Override
-    public void PauzeGame(IPacmanClient client) {
-        throw new UnsupportedOperationException("Method PauzeGame not implemented");
+    public void PauseGame(IPacmanClient client) {
+        throw new UnsupportedOperationException("Method PauseGame not implemented");
     }
 
 }

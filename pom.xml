@@ -16,6 +16,7 @@
         <module>MODELS</module>
         <module>UNIT_TESTS</module>
         <module>SOCKETSHARED</module>
+        <module>RESTclient</module>
     </modules>
     <build>
         <plugins>

@@ -9,5 +9,4 @@ public enum SocketOperationType {
     POSITIONS,
     GAMESTATE,
     SCORE
-
 }

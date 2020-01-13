@@ -14,7 +14,7 @@ public class EntityFactory {
     static Image FruitIMG = new Image("file:GUI\\src\\main\\java\\UI\\assets\\fruit.png");
 
 
-    public static ImageView drawWall(int x, int y, int w, int h)
+    public static ImageView drawWall(int x, int y, double w, double h)
     {
         ImageView iv = new ImageView();
         iv.setImage(WallIMG);
@@ -26,7 +26,7 @@ public class EntityFactory {
         return iv;
     }
 
-    public static ImageView drawPacman(int x, int y, int w, int h) {
+    public static ImageView drawPacman(int x, int y, double w, double h) {
 
         ImageView iv = new ImageView();
         iv.setImage(PacManIMG);
@@ -38,7 +38,7 @@ public class EntityFactory {
         return iv;
     }
 
-    public static ImageView drawPallet(int x, int y, int w, int h) {
+    public static ImageView drawPallet(int x, int y, double w, double h) {
 
         ImageView iv = new ImageView();
         iv.setImage(PalletIMG);
@@ -50,7 +50,7 @@ public class EntityFactory {
         return iv;
     }
 
-    public static ImageView drawSuperPallet(int x, int y, int w, int h) {
+    public static ImageView drawSuperPallet(int x, int y, double w, double h) {
         ImageView iv = new ImageView();
         iv.setImage(SuperPalletIMG);
         iv.setFitWidth(w);
@@ -61,7 +61,7 @@ public class EntityFactory {
         return iv;
     }
 
-    public static ImageView drawFruit(int x, int y, int w, int h) {
+    public static ImageView drawFruit(int x, int y, double w, double h) {
         ImageView iv = new ImageView();
         iv.setImage(FruitIMG);
         iv.setFitWidth(w);
@@ -72,7 +72,7 @@ public class EntityFactory {
         return iv;
     }
 
-    public static ImageView drawGhost(int x, int y, int w, int h) {
+    public static ImageView drawGhost(int x, int y, double w, double h) {
         ImageView iv = new ImageView();
         iv.setImage(GhostIMG);
         iv.setFitWidth(w);
@@ -83,7 +83,7 @@ public class EntityFactory {
         return iv;
     }
 
-    public static ImageView drawVulnGhost(int x, int y, int w, int h) {
+    public static ImageView drawVulnGhost(int x, int y, double w, double h) {
         ImageView iv = new ImageView();
         iv.setImage(ghostVuln);
         iv.setFitWidth(w);

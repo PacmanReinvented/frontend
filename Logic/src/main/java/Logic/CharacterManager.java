@@ -17,6 +17,7 @@ public class CharacterManager implements IPacmanServer, Observer {
     private List<Integer> computerPlayers = new ArrayList<>();
     private Map<Integer, String> playerNames = new HashMap<>();
     private final int amountOfComputerPlayers = 1;
+    private Random r = new Random();
 
     private List<IPacmanClient> joinedClients = new ArrayList<>();
 
@@ -30,7 +31,6 @@ public class CharacterManager implements IPacmanServer, Observer {
     public void registerPlayer(IPacmanClient GUI, String name) {
         joinedClients.add(GUI);
 
-        Random r = new Random();
         int playerNr = GUI.getID();
         System.out.println("Registered " + name + " with GUI:" + GUI + " as Nr: " + playerNr);
         playerNames.put(playerNr, name);
@@ -49,7 +49,6 @@ public class CharacterManager implements IPacmanServer, Observer {
     @Override
     public void Move(MoveDirection direction, IPacmanClient client) {
         game.moveCharacter(client.getID(), direction);
-        Random r = new Random();
 
         //"AI"
         for (Integer cpuNr : computerPlayers) {
@@ -97,7 +96,7 @@ public class CharacterManager implements IPacmanServer, Observer {
     }
 
     @Override
-    public void PauzeGame(IPacmanClient client) {
+    public void PauseGame(IPacmanClient client) {
         throw new UnsupportedOperationException("Method pauseGame not implemented");
     }
 

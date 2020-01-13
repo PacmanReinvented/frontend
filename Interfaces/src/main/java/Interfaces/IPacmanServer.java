@@ -10,7 +10,6 @@ public interface IPacmanServer {
     void Move(MoveDirection direction, IPacmanClient client);
     void EndGame(IPacmanClient client);
     void StartGame(IPacmanClient client);
-    void PauzeGame(IPacmanClient client);
-
+    void PauseGame(IPacmanClient client);
 }
 
