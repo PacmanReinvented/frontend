@@ -128,6 +128,9 @@ public class CharacterManager implements IPacmanServer, Observer {
                 //TODO send some feedback to players
                 break;
         }
+        for (IPacmanClient joinedClient : joinedClients) {
+            joinedClient.receiveGameState(state);
+        }
     }
 }
 

@@ -6,6 +6,7 @@ import SocketClient.GameClientMessageSender;
 import client.IRestTemplate;
 import client.REST;
 import entities.User;
+import enums.GameState;
 import enums.MoveDirection;
 import enums.TileType;
 import javafx.application.Application;
@@ -23,8 +24,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main extends Application implements IPacmanClient
-{
+public class Main extends Application implements IPacmanClient {
     private Pane GameCanvas = new Pane();
     private Pane ScoreCanvas = new Pane();
     private Pane Container = new Pane();
@@ -45,7 +45,7 @@ public class Main extends Application implements IPacmanClient
     private Pane createGameCanvas() throws IOException {
         GameCanvas.setPrefSize(600, 600);
         Logic = new GameClientMessageSender();
-        Logic.registerPlayer(this,"Standalone");
+        Logic.registerPlayer(this, "Standalone");
         GameCanvas.setStyle("-fx-background-color: #5fc964; -fx-margin: 0;");
         startGameButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -84,8 +84,8 @@ public class Main extends Application implements IPacmanClient
         //updateCanvas(grid);
         return GameCanvas;
     }
-    private void startGame()
-    {
+
+    private void startGame() {
         Logic.StartGame(this);
     }
 
@@ -102,36 +102,50 @@ public class Main extends Application implements IPacmanClient
         Container.getChildren().add(createScoreCanvas());
         return Container;
     }
-    private void showMessage(final String message)
-    {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Pacman");
-                alert.setContentText(message);
-                alert.showAndWait();
-            }
-        });
-    }
-    private void registerUser(){
-        boolean register = restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()));
-        if(register = true){
-            showMessage("Registration Successful!");
+
+    private void showMessage(final String message, boolean waitGUI) {
+        if (waitGUI) {
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Pacman");
+                    alert.setContentText(message);
+                    alert.showAndWait();
+                }
+            });
+        } else {
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Pacman");
+                    alert.setContentText(message);
+                    alert.show();
+                }
+            });
         }
-        else{showMessage("Registration Failed!");}
     }
-    private void loginUser()
-    {
+
+    private void registerUser() {
+        boolean register = restTemplate.registerUser(new User(tbUsername.getText(), tbPassword.getText()));
+        if (register = true) {
+            showMessage("Registration Successful!",true);
+        } else {
+            showMessage("Registration Failed!",true);
+        }
+    }
+
+    private void loginUser() {
         try {
             User user = restTemplate.loginUser(tbUsername.getText(), tbPassword.getText());
             if (user != null) {
-                showMessage("Login Successful!");
+                showMessage("Login Successful!",true);
             } else {
-                showMessage("Login Failed! Incorrect Password");
+                showMessage("Login Failed! Incorrect Password",true);
             }
         } catch (Exception e) {
-            showMessage("Username doesn't exist!");
+            showMessage("Username doesn't exist!",true);
         }
     }
 
@@ -175,7 +189,9 @@ public class Main extends Application implements IPacmanClient
         int w = 600 / grid[0].length;
         int h = 600 / grid.length;
 
-        GameCanvas.getChildren().removeIf(n -> {return true;});
+        GameCanvas.getChildren().removeIf(n -> {
+            return true;
+        });
 
 
         for (int i = 0; i < grid.length; i++) {
@@ -194,18 +210,18 @@ public class Main extends Application implements IPacmanClient
                         GameCanvas.getChildren().add(EntityFactory.drawSuperPallet(j, i, w, h));
                         break;
                     case FRUIT:
-                        GameCanvas.getChildren().add(EntityFactory.drawFruit(j,i,w,h));
+                        GameCanvas.getChildren().add(EntityFactory.drawFruit(j, i, w, h));
                         break;
                     case GHOST:
-                        GameCanvas.getChildren().add(EntityFactory.drawGhost(j,i,w,h));
+                        GameCanvas.getChildren().add(EntityFactory.drawGhost(j, i, w, h));
                         break;
                     case GHOSTVULNERABLE:
-                        GameCanvas.getChildren().add(EntityFactory.drawVulnGhost(j,i,w,h));
+                        GameCanvas.getChildren().add(EntityFactory.drawVulnGhost(j, i, w, h));
                         break;
                     case EMPTY:
                         break;
                     default:
-                        System.out.println("GUI: drawing a TileType of type has not yet been implemented "+grid[i][j]);
+                        System.out.println("GUI: drawing a TileType of type has not yet been implemented " + grid[i][j]);
 
                 }
             }
@@ -216,8 +232,7 @@ public class Main extends Application implements IPacmanClient
     public void updateScoreboard(String[] scoreBoard) {
         //TODO poll Game Interface for some scores
         ScoreCanvas.getChildren().clear();
-        for (double i = 0; i < scoreBoard.length; i++)
-        {
+        for (double i = 0; i < scoreBoard.length; i++) {
             Text txt = new Text();
             txt.setStyle("-fx-fill: white; -fx-font: 14pxf Tahoma;");
             txt.setX(25);
@@ -256,10 +271,35 @@ public class Main extends Application implements IPacmanClient
     }
 
     @Override
-    public void sendScoreList(String[] scores)
-    {
+    public void sendScoreList(String[] scores) {
         updateScoreboard(scores);
         System.out.println(scores[0]);
+    }
+
+    @Override
+    public void receiveGameState(GameState gameState) {
+        String message;
+        switch (gameState) {
+            case STARTED:
+                message = "Game has started!";
+                break;
+            case PAUSED:
+                message = "Game is paused...";
+                break;
+            case ALLITEMSEATEN:
+                message = "Pacman was successful!";
+                break;
+            case PACMANDIED:
+                message = "Pacman died!";
+                break;
+            case ENDED:
+                message = "The game is over.";
+                break;
+            default:
+                message = "You received an invalid gamestate: " + gameState;
+                break;
+        }
+        showMessage(message,false);
     }
 
     @Override
