@@ -308,7 +308,7 @@ public class Main extends Application implements IPacmanClient {
             GameCanvas.getChildren().removeIf(n -> {
                 return true;
             });
-            //TODO remove the scoreboard or something and put the login form items back in here
+            ScoreCanvas.getChildren().clear();
         }
     }
 
