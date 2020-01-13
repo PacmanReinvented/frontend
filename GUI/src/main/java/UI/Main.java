@@ -303,7 +303,13 @@ public class Main extends Application implements IPacmanClient {
                 message = "You received an invalid gamestate: " + gameState;
                 break;
         }
-        showMessage(message,false);
+        showMessage(message,true);
+        if(gameState==GameState.ENDED){
+            GameCanvas.getChildren().removeIf(n -> {
+                return true;
+            });
+            //TODO remove the scoreboard or something and put the login form items back in here
+        }
     }
 
     @Override
