@@ -38,7 +38,7 @@ public class Game extends Observable implements Observer, ISuperPalletListener {
     }
 
 
-    public void startGame() {
+    public void newRound() {
         setUpMap();
         saveScores();
         selectNewPacman();
