@@ -44,7 +44,7 @@ public class GameClientMessageSender implements IPacmanServer {
 
     @Override
     public void StartGame(IPacmanClient client) {
-        SocketClientStartGameMessage message = new SocketClientStartGameMessage();
+            SocketClientStartGameMessage message = new SocketClientStartGameMessage();
         communicator.sendMessage(message);
     }
 
