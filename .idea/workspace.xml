@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in UNIT_TESTS (1)">
     <configuration name="CommunicatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketServer.CommunicatorServer" />
       <module name="LOGIC" />
@@ -149,6 +148,14 @@
       <toRun name="Main" type="Application" />
       <method v="2" />
     </configuration>
+    <configuration name="All in UNIT_TESTS (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UNIT_TESTS" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in UNIT_TESTS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UNIT_TESTS" />
       <option name="PACKAGE_NAME" value="" />
@@ -178,9 +185,11 @@
       <item itemvalue="Compound.Start 2 clients" />
       <item itemvalue="JUnit.All in UNIT_TESTS" />
       <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="JUnit.All in UNIT_TESTS (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in UNIT_TESTS (1)" />
         <item itemvalue="Application.CommunicatorServer" />
         <item itemvalue="Spring Boot.Application" />
         <item itemvalue="JUnit.All in UNIT_TESTS" />
@@ -215,7 +224,7 @@
       <workItem from="1578902449974" duration="8553000" />
       <workItem from="1578916100729" duration="3474000" />
       <workItem from="1580072052242" duration="23000" />
-      <workItem from="1580111709881" duration="3252000" />
+      <workItem from="1580111709881" duration="4369000" />
     </task>
     <task id="LOCAL-00001" summary="refactored interfaces to support websocket operations">
       <created>1575894399763</created>
@@ -266,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580113978763</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="iteratie 4">
+      <created>1580115138314</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580115138314</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
