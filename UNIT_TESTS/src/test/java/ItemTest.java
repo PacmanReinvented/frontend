@@ -44,17 +44,6 @@ public class ItemTest
         Assert.assertEquals(expected2, actual2);
     }
 
-    /*@Test
-    public void PickedUp()
-    {
-        Fruit fruit = new Fruit(0,0,FruitType.Banana);
-        Pacman pacman = new Pacman(0,0,false,false);
-        pacman.takeItem(fruit);
-        boolean expected = true;
-        boolean actual = fruit.isEaten();
-        Assert.assertEquals(expected,actual);
-    } */
-
     @Test
     public void itemCollidesWith()
     {

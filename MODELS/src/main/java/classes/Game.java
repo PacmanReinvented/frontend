@@ -45,6 +45,12 @@ public class Game extends Observable implements Observer, ISuperPalletListener {
         assignScores();
     }
 
+    public void newRound() {
+        setUpMap();
+        saveScores();
+        selectNewPacman();
+    }
+
     /**
      * Writes away the Character object's scores
      */

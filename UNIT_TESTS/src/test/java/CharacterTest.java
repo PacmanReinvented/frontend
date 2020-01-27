@@ -1,21 +1,13 @@
+import classes.Ghost;
+import classes.ISuperPalletListener;
 import classes.Pacman;
+import classes.Pallet;
 import enums.MoveDirection;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class CharacterTest
 {
-    /*@Test
-    public void ghostIsEaten()
-    {
-        Ghost ghost = new Ghost(0,0, true, false);
-        Pacman pacman = new Pacman(0,0, false, false);
-        pacman.collidesWith(ghost);
-        boolean expected = true;
-        boolean actual = ghost.isEaten();
-        Assert.assertEquals(expected,actual);
-    } */
-
     @Test
     public void correctScoreAdded()
     {
@@ -75,29 +67,5 @@ public class CharacterTest
         int actual = pacman.getPosX();
         Assert.assertEquals(expected, actual);
     }
-
-    /*@Test
-    public void pacmanGetsEaten()
-    {
-      Pacman pacman = new Pacman(0,0,true, false);
-      Ghost ghost = new Ghost(0,1,false,false);
-      ghost.moveTowards(MoveDirection.LEFT);
-      ghost.collidesWith(pacman);
-      boolean expected = true;
-      boolean actual = pacman.isEaten();
-      Assert.assertEquals(expected, actual);
-    } */
-
-    /*@Test
-    public void ghostsBecomeVulnerable()
-    {
-      Pacman pacman = new Pacman(0,0, false, false);
-      Ghost ghost = new Ghost(4,4, false,false);
-      Pallet pallet = new Pallet(0,0, true);
-      pacman.takeItem(pallet);
-      boolean expected = true;
-      boolean actual = ghost.isVulnerable();
-      Assert.assertEquals(expected, actual);
-    } */
 }
 

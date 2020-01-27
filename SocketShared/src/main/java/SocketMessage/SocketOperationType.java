@@ -11,5 +11,5 @@ public enum SocketOperationType {
     GAMESTATE,
     SCORE,
     LOGINRESPONSE,
-    REGISTERRESPONSE
+    REGISTERRESPONSE,
 }

@@ -2,29 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/Enums/LoginState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/Enums/RegisterState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketClientLoginMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/GameClientMessageSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/src/main/java/Interfaces/IPacmanServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/CommunicatorServerWebSocketEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/GameServerMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/SocketServer/GameServerMessageSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MODELS/src/main/java/classes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/MODELS/src/main/java/classes/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/CharacterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/ItemTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="271" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="pacman" />
@@ -41,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -61,7 +61,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Software/Yahtzee" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Software/Yahtzee" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -94,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main 2">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="CommunicatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketServer.CommunicatorServer" />
       <module name="LOGIC" />
@@ -155,6 +155,14 @@
       <toRun name="Main" type="Application" />
       <method v="2" />
     </configuration>
+    <configuration name="All in UNIT_TESTS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UNIT_TESTS" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="RESTserver" />
       <extension name="coverage">
@@ -174,12 +182,14 @@
       <item itemvalue="Application.CommunicatorServer" />
       <item itemvalue="Application.CommunicatorTest" />
       <item itemvalue="Compound.Start 2 clients" />
+      <item itemvalue="JUnit.All in UNIT_TESTS" />
       <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CommunicatorServer" />
         <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="JUnit.All in UNIT_TESTS" />
         <item itemvalue="Application.CommunicatorTest" />
       </list>
     </recent_temporary>
@@ -210,6 +220,8 @@
       <workItem from="1578844950772" duration="480000" />
       <workItem from="1578902449974" duration="8553000" />
       <workItem from="1578916100729" duration="3474000" />
+      <workItem from="1580072052242" duration="23000" />
+      <workItem from="1580111709881" duration="2195000" />
     </task>
     <task id="LOCAL-00001" summary="refactored interfaces to support websocket operations">
       <created>1575894399763</created>
@@ -281,15 +293,7 @@
     <MESSAGE value="working register REST" />
     <option name="LAST_COMMIT_MESSAGE" value="working register REST" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/LOGIC/src/main/java/Logic/CharacterManager.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/frontend$All_in_UNIT_TESTS.ic" NAME="All in UNIT_TESTS Coverage Results" MODIFIED="1580071873532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

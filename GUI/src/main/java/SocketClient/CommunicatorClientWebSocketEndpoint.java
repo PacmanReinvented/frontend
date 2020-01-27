@@ -189,7 +189,9 @@ public class CommunicatorClientWebSocketEndpoint implements ICommunicator {
                 break;
             case GAMESTATE:
                 SocketResponseGameStateMessage gameStateMessage = gson.fromJson(jsonMessage, SocketResponseGameStateMessage.class);
-                System.out.println("[CommunicatorClientWebSocketEndpoint.java] Updating gamestate not yet supported on client");
+                Platform.runLater(()-> {
+                    pacmanClient.receiveGameState(gameStateMessage.getGameState());
+                });
                 break;
             case SCORE:
                 SocketResponseScoreMessage scoreMessage = gson.fromJson(jsonMessage, SocketResponseScoreMessage.class);

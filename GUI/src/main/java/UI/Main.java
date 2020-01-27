@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -36,14 +37,12 @@ public class Main extends Application implements IPacmanClient {
     private Button loginButton = new Button();
     private Button registerButton = new Button();
     private TextField tbUsername = new TextField();
-    private TextField tbPassword = new TextField();
+    private PasswordField tbPassword = new PasswordField();
 
     private double t = 0;
     private int playerNr = 1;
     //TODO get rid of the following thing for the server version
     private IPacmanServer Logic;
-    private IRestTemplate restTemplate = new REST();
-
 
     private Pane createGameCanvas() throws IOException {
         GameCanvas.setPrefSize(600, 600);
@@ -298,12 +297,14 @@ public class Main extends Application implements IPacmanClient {
                 break;
             case ENDED:
                 message = "The game is over.";
+                GameCanvas.getChildren().clear();
+                ScoreCanvas.getChildren().clear();
                 break;
             default:
                 message = "You received an invalid gamestate: " + gameState;
                 break;
         }
-        showMessage(message,false);
+        showMessage(message,true);
     }
 
     @Override
