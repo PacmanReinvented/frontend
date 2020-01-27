@@ -156,6 +156,7 @@ public class CharacterManager implements IPacmanServer, Observer {
                 System.out.println("[CharacterManager.java] the game has ended.");
                 break;
         }
+        joinedClients.clear();
     }
     void newGame(){
         game = new Game();

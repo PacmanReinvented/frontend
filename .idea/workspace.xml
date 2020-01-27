@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cbd80729-a116-4674-a713-435bb72ea339" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/SocketClient/CommunicatorClientWebSocketEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/main/java/UI/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/src/main/java/Logic/CharacterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/target/classes/Logic/CharacterManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MODELS/src/main/java/classes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/MODELS/src/main/java/classes/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/SocketShared/src/main/java/SocketMessage/SocketOperationType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/CharacterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UNIT_TESTS/src/test/java/ItemTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +215,7 @@
       <workItem from="1578902449974" duration="8553000" />
       <workItem from="1578916100729" duration="3474000" />
       <workItem from="1580072052242" duration="23000" />
-      <workItem from="1580111709881" duration="2195000" />
+      <workItem from="1580111709881" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="refactored interfaces to support websocket operations">
       <created>1575894399763</created>
@@ -265,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578909454176</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="iteratie 4">
+      <created>1580113978763</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580113978763</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +292,8 @@
     <MESSAGE value="superpallets fixed" />
     <MESSAGE value="bunch of shit" />
     <MESSAGE value="working register REST" />
-    <option name="LAST_COMMIT_MESSAGE" value="working register REST" />
+    <MESSAGE value="iteratie 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="iteratie 4" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/frontend$All_in_UNIT_TESTS.ic" NAME="All in UNIT_TESTS Coverage Results" MODIFIED="1580071873532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

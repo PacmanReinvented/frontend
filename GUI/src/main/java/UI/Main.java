@@ -297,7 +297,9 @@ public class Main extends Application implements IPacmanClient {
                 break;
             case ENDED:
                 message = "The game is over.";
-                GameCanvas.getChildren().clear();
+                GameCanvas.getChildren().removeIf(n -> {
+                    return true;
+                });
                 ScoreCanvas.getChildren().clear();
                 break;
             default:
